@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | 落幕的技术博客</title>
+  <title>落幕的技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Python、爬虫、Web开发">
-<meta property="og:type" content="website">
+  <meta name="description" content="编码在开发过程，对应不同的语言使用不同的字符编码。英文    ISO-8859-1中文    gbk或gb2312 目前Python为了统一编码格式，在3.0以上的版本使用了utf-8编码print()函数语法格式：print(value,…,sep=’ ‘,end=’\n’)其中，value代表我们要输出的内容，字符串或者是数值等内容sep代表输出多个值之间的间隔符，默认空格隔开。在引号内可以用">
+<meta name="keywords" content="Python、爬虫、Web开发">
+<meta property="og:type" content="article">
 <meta property="og:title" content="落幕的技术博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/07/12/lesson1/index.html">
 <meta property="og:site_name" content="落幕的技术博客">
+<meta property="og:description" content="编码在开发过程，对应不同的语言使用不同的字符编码。英文    ISO-8859-1中文    gbk或gb2312 目前Python为了统一编码格式，在3.0以上的版本使用了utf-8编码print()函数语法格式：print(value,…,sep=’ ‘,end=’\n’)其中，value代表我们要输出的内容，字符串或者是数值等内容sep代表输出多个值之间的间隔符，默认空格隔开。在引号内可以用">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-12T13:05:44.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="落幕的技术博客">
+<meta name="twitter:description" content="编码在开发过程，对应不同的语言使用不同的字符编码。英文    ISO-8859-1中文    gbk或gb2312 目前Python为了统一编码格式，在3.0以上的版本使用了utf-8编码print()函数语法格式：print(value,…,sep=’ ‘,end=’\n’)其中，value代表我们要输出的内容，字符串或者是数值等内容sep代表输出多个值之间的间隔符，默认空格隔开。在引号内可以用">
   
     <link rel="alternative" href="/atom.xml" title="落幕的技术博客" type="application/atom+xml">
   
@@ -151,70 +155,148 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-lesson1" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><h2 id="在开发过程，对应不同的语言使用不同的字符编码。"><a href="#在开发过程，对应不同的语言使用不同的字符编码。" class="headerlink" title="在开发过程，对应不同的语言使用不同的字符编码。"></a>在开发过程，对应不同的语言使用不同的字符编码。</h2><p>英文    ISO-8859-1<br>中文    gbk或gb2312</p>
+<h2 id="目前Python为了统一编码格式，在3-0以上的版本使用了utf-8编码"><a href="#目前Python为了统一编码格式，在3-0以上的版本使用了utf-8编码" class="headerlink" title="目前Python为了统一编码格式，在3.0以上的版本使用了utf-8编码"></a>目前Python为了统一编码格式，在3.0以上的版本使用了utf-8编码</h2><h2 id="print-函数"><a href="#print-函数" class="headerlink" title="print()函数"></a>print()函数</h2><p>语法格式：print(value,…,sep=’ ‘,end=’\n’)<br>其中，value代表我们要输出的内容，字符串或者是数值等内容<br>sep代表输出多个值之间的间隔符，默认空格隔开。在引号内可以用其他内容重新定义间隔符。<br>end代表输出语句的结束标识，默认换行，可以用其他内容重新定义，其输出的内容将不再进行换行操作。</p>
+<h2 id="print-函数的基本使用"><a href="#print-函数的基本使用" class="headerlink" title="print()函数的基本使用"></a>print()函数的基本使用</h2><h3 id="print-常用输出方式："><a href="#print-常用输出方式：" class="headerlink" title="print()常用输出方式："></a>print()常用输出方式：</h3><p>print(‘hello ‘)、print(123456)等</p>
+<h3 id="参数格式输出"><a href="#参数格式输出" class="headerlink" title="参数格式输出"></a>参数格式输出</h3><hr>
+<h2 id="s：代表了字符串内容，其中"><a href="#s：代表了字符串内容，其中" class="headerlink" title="%s：代表了字符串内容，其中"></a>%s：代表了字符串内容，其中</h2><p>print(‘welcome %s’%Beijing)=&gt;welcome Beijing</p>
+<h2 id="print-‘welcome-10-3s’-Beijing-gt-welcome-Bei-输出结果为10个字符其中包含字符串Beijing中前三个，其余用空格填充"><a href="#print-‘welcome-10-3s’-Beijing-gt-welcome-Bei-输出结果为10个字符其中包含字符串Beijing中前三个，其余用空格填充" class="headerlink" title="print(‘welcome %10.3s’%Beijing)=&gt;welcome       Bei,输出结果为10个字符其中包含字符串Beijing中前三个，其余用空格填充"></a>print(‘welcome %10.3s’%Beijing)=&gt;welcome       Bei,输出结果为10个字符其中包含字符串Beijing中前三个，其余用空格填充</h2><h2 id="d：代表了整数内容，其中"><a href="#d：代表了整数内容，其中" class="headerlink" title="%d：代表了整数内容，其中"></a>%d：代表了整数内容，其中</h2><p>print(‘price %d’%10)=&gt;price 10<br>print(‘price %d’%10.5) =&gt; price 10<br>print(‘price %3d’%10000)=&gt; price 10000<br>注意这里面的3d表示输出一个宽度为3个单元的数值，如果数值长度小于三，那么数值靠右对齐。</p>
+<h2 id="3d表示，数值反向对齐（靠左对齐）"><a href="#3d表示，数值反向对齐（靠左对齐）" class="headerlink" title="-3d表示，数值反向对齐（靠左对齐）"></a>-3d表示，数值反向对齐（靠左对齐）</h2><h2 id="f：代表了浮点数内容-注意，在Python中浮点数是一个近似值，所以结果也是近似"><a href="#f：代表了浮点数内容-注意，在Python中浮点数是一个近似值，所以结果也是近似" class="headerlink" title="%f：代表了浮点数内容(注意，在Python中浮点数是一个近似值，所以结果也是近似)"></a>%f：代表了浮点数内容(注意，在Python中浮点数是一个近似值，所以结果也是近似)</h2><p>print(‘price %f’%10.2)=&gt;10.200000<br>print(‘price %.1f’%10.2) =&gt; 10.2<br>print(‘prince %.1f’%10.58) = &gt;10.6 当取一位小数位的时候，将小数位第二位进行舍入操作，但是Python的中间值不是5，导致当小数位第二位是5时，直接被舍去<br>print(‘%5.1f’%10.3) =&gt; 10.3<br>输出一个宽度为5的单位，其中整数3位，小数部分1位，小数点占一位</p>
+<h2 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h2><p>在Python3.0之后，推荐使用{0}来代替前期的%d,%s,%f等一系列的格式化参数，采用了字符串的format函数进行处理。写法如下：<br>print(‘welcome {0}同学，加入{1}班级’.format(‘tom’,’Python3班’))<br>其中{0}，{1}分别映射format()中的’tom’和’Python3班’，如果前面占位符中的索引值变化，那么他们映射的值也随之变化</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/12/lesson1/" class="archive-article-date">
-  	<time datetime="2018-07-12T12:54:53.240Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-12</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/12/lesson1/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/09/hello-world/" class="archive-article-date">
-  	<time datetime="2018-07-09T12:20:09.893Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-09</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/09/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">welocome to pythonshan</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/09/hello-world/">welocome to pythonshan</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -237,8 +319,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

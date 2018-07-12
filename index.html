@@ -153,15 +153,18 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-lesson5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-lesson1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>在开发过程，对应不同的语言使用不同的字符编码。<br>英文    ISO-8859-1<br>中文    gbk或gb2312<br>目前Python为了统一编码格式，在3.0以上的版本使用了utf-8编码</p>
-<h2 id="print-函数"><a href="#print-函数" class="headerlink" title="print()函数"></a>print()函数</h2><p>语法格式：print(value,…,sep=’ ‘,end=’\n’)<br>其中，value代表我们要输出的内容，字符串或者是数值等内容<br>sep代表输出多个值之间的间隔符，默认空格隔开。在引号内可以用其他内容重新定义间隔符。<br>end代表输出语句的结束标识，默认换行，可以用其他内容重新定义，其输出的内容将不再进行换行操作。</p>
+        <h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><h2 id="在开发过程，对应不同的语言使用不同的字符编码。"><a href="#在开发过程，对应不同的语言使用不同的字符编码。" class="headerlink" title="在开发过程，对应不同的语言使用不同的字符编码。"></a>在开发过程，对应不同的语言使用不同的字符编码。</h2><p>英文    ISO-8859-1<br>中文    gbk或gb2312</p>
+<h2 id="目前Python为了统一编码格式，在3-0以上的版本使用了utf-8编码"><a href="#目前Python为了统一编码格式，在3-0以上的版本使用了utf-8编码" class="headerlink" title="目前Python为了统一编码格式，在3.0以上的版本使用了utf-8编码"></a>目前Python为了统一编码格式，在3.0以上的版本使用了utf-8编码</h2><h2 id="print-函数"><a href="#print-函数" class="headerlink" title="print()函数"></a>print()函数</h2><p>语法格式：print(value,…,sep=’ ‘,end=’\n’)<br>其中，value代表我们要输出的内容，字符串或者是数值等内容<br>sep代表输出多个值之间的间隔符，默认空格隔开。在引号内可以用其他内容重新定义间隔符。<br>end代表输出语句的结束标识，默认换行，可以用其他内容重新定义，其输出的内容将不再进行换行操作。</p>
 <h2 id="print-函数的基本使用"><a href="#print-函数的基本使用" class="headerlink" title="print()函数的基本使用"></a>print()函数的基本使用</h2><h3 id="print-常用输出方式："><a href="#print-常用输出方式：" class="headerlink" title="print()常用输出方式："></a>print()常用输出方式：</h3><p>print(‘hello ‘)、print(123456)等</p>
-<h3 id="参数格式输出"><a href="#参数格式输出" class="headerlink" title="参数格式输出"></a>参数格式输出</h3><p>%s：代表了字符串内容，其中<br>print(‘welcome %s’%Beijing)=&gt;welcome Beijing<br>print(‘welcome %10.3s’%Beijing)=&gt;welcome       Bei,输出结果为10个字符其中包含字符串Beijing中前三个，其余用空格填充<br>%d：代表了整数内容，其中<br>print(‘price %d’%10)=&gt;price 10<br>print(‘price %d’%10.5) =&gt; price 10<br>print(‘price %3d’%10000)=&gt; price 10000<br>注意这里面的3d表示输出一个宽度为3个单元的数值，如果数值长度小于三，那么数值靠右对齐。<br>-3d表示，数值反向对齐（靠左对齐）<br>%f：代表了浮点数内容(注意，在Python中浮点数是一个近似值，所以结果也是近似)<br>print(‘price %f’%10.2)=&gt;10.200000<br>print(‘price %.1f’%10.2) =&gt; 10.2<br>print(‘prince %.1f’%10.58) = &gt;10.6 当取一位小数位的时候，将小数位第二位进行舍入操作，但是Python的中间值不是5，导致当小数位第二位是5时，直接被舍去<br>print(‘%5.1f’%10.3) =&gt; 10.3<br>输出一个宽度为5的单位，其中整数3位，小数部分1位，小数点占一位</p>
+<h3 id="参数格式输出"><a href="#参数格式输出" class="headerlink" title="参数格式输出"></a>参数格式输出</h3><hr>
+<h2 id="s：代表了字符串内容，其中"><a href="#s：代表了字符串内容，其中" class="headerlink" title="%s：代表了字符串内容，其中"></a>%s：代表了字符串内容，其中</h2><p>print(‘welcome %s’%Beijing)=&gt;welcome Beijing</p>
+<h2 id="print-‘welcome-10-3s’-Beijing-gt-welcome-Bei-输出结果为10个字符其中包含字符串Beijing中前三个，其余用空格填充"><a href="#print-‘welcome-10-3s’-Beijing-gt-welcome-Bei-输出结果为10个字符其中包含字符串Beijing中前三个，其余用空格填充" class="headerlink" title="print(‘welcome %10.3s’%Beijing)=&gt;welcome       Bei,输出结果为10个字符其中包含字符串Beijing中前三个，其余用空格填充"></a>print(‘welcome %10.3s’%Beijing)=&gt;welcome       Bei,输出结果为10个字符其中包含字符串Beijing中前三个，其余用空格填充</h2><h2 id="d：代表了整数内容，其中"><a href="#d：代表了整数内容，其中" class="headerlink" title="%d：代表了整数内容，其中"></a>%d：代表了整数内容，其中</h2><p>print(‘price %d’%10)=&gt;price 10<br>print(‘price %d’%10.5) =&gt; price 10<br>print(‘price %3d’%10000)=&gt; price 10000<br>注意这里面的3d表示输出一个宽度为3个单元的数值，如果数值长度小于三，那么数值靠右对齐。</p>
+<h2 id="3d表示，数值反向对齐（靠左对齐）"><a href="#3d表示，数值反向对齐（靠左对齐）" class="headerlink" title="-3d表示，数值反向对齐（靠左对齐）"></a>-3d表示，数值反向对齐（靠左对齐）</h2><h2 id="f：代表了浮点数内容-注意，在Python中浮点数是一个近似值，所以结果也是近似"><a href="#f：代表了浮点数内容-注意，在Python中浮点数是一个近似值，所以结果也是近似" class="headerlink" title="%f：代表了浮点数内容(注意，在Python中浮点数是一个近似值，所以结果也是近似)"></a>%f：代表了浮点数内容(注意，在Python中浮点数是一个近似值，所以结果也是近似)</h2><p>print(‘price %f’%10.2)=&gt;10.200000<br>print(‘price %.1f’%10.2) =&gt; 10.2<br>print(‘prince %.1f’%10.58) = &gt;10.6 当取一位小数位的时候，将小数位第二位进行舍入操作，但是Python的中间值不是5，导致当小数位第二位是5时，直接被舍去<br>print(‘%5.1f’%10.3) =&gt; 10.3<br>输出一个宽度为5的单位，其中整数3位，小数部分1位，小数点占一位</p>
 <h2 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h2><p>在Python3.0之后，推荐使用{0}来代替前期的%d,%s,%f等一系列的格式化参数，采用了字符串的format函数进行处理。写法如下：<br>print(‘welcome {0}同学，加入{1}班级’.format(‘tom’,’Python3班’))<br>其中{0}，{1}分别映射format()中的’tom’和’Python3班’，如果前面占位符中的索引值变化，那么他们映射的值也随之变化</p>
 
       
@@ -175,7 +178,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/12/lesson5/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/07/12/lesson1/">展开全文 >></a>
         </p>
       
 
