@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="落幕的技术博客">
 <meta property="og:description" content="#字符串 ##1、字符串声明，可以使用’’也可以使用””，他们都可以表示字符串内容。 ##2、比较运算符：  、&amp;lt;、==、!=、&amp;gt;=、&amp;lt;=他们的返回值为布尔型，即True或False字符串进行比较时，采用对应位置的逐字母进行比较，首先将字母转成ASCII码，然后根据码值进行比较大小。如果一旦出现一方的字母码值大于另一方，就结束比较。提示：在键盘上，所有的字符的ASCII码值都小于">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-12T13:30:34.748Z">
+<meta property="og:updated_time" content="2018-07-12T13:38:48.184Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基本数据类型">
 <meta name="twitter:description" content="#字符串 ##1、字符串声明，可以使用’’也可以使用””，他们都可以表示字符串内容。 ##2、比较运算符：  、&amp;lt;、==、!=、&amp;gt;=、&amp;lt;=他们的返回值为布尔型，即True或False字符串进行比较时，采用对应位置的逐字母进行比较，首先将字母转成ASCII码，然后根据码值进行比较大小。如果一旦出现一方的字母码值大于另一方，就结束比较。提示：在键盘上，所有的字符的ASCII码值都小于">
@@ -183,83 +183,24 @@
 </blockquote>
 <p>##3、我们使用input()，允许进行交互式输入，默认input()输入的值类型为str字符串类型。</p>
 <p>##4、字符串常用的方法</p>
-<p>#1）find() 查找<br>函数格式：str.find(子字符串[,开始索引位，结束索引位])<br>返回值：如果查找成功，则返回所查找内容在字符串中的索引位置，如果没有找到，返回-1.</p>
-<h2 id="注意：如果所查找的内容中，有多个相同的字母，只会返回第一个字母所在的索引位。比如："><a href="#注意：如果所查找的内容中，有多个相同的字母，只会返回第一个字母所在的索引位。比如：" class="headerlink" title="注意：如果所查找的内容中，有多个相同的字母，只会返回第一个字母所在的索引位。比如："></a>注意：如果所查找的内容中，有多个相同的字母，只会返回第一个字母所在的索引位。比如：</h2><p>str1 = ‘hello’</p>
-<h2 id="str1-find-‘ll’-gt-2"><a href="#str1-find-‘ll’-gt-2" class="headerlink" title="str1.find(‘ll’) =&gt; 2 "></a>str1.find(‘ll’) =&gt; 2 </h2><p>该例中，’ll’在字符串中出现了两次，但只会返回第一次出现的索引位置。<br>为什么查找时，没有找到目标字符串的情况下会返回-1。其实，在find操作中，会对字符串进行扫描从字符串的索引位0开始，一直到字符串结尾，如果在字符串最后一位没有找到匹配的内容，将指向字符串结束符(EOF)，该结束符为-1。所以找不到时，find返回值为-1.</p>
-<h2 id="更多用法："><a href="#更多用法：" class="headerlink" title="更多用法："></a>更多用法：</h2><p>string1 = ‘apple,banana,apple,apple’</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>string1.find(‘apple’)<br>0<br>string1.find(‘apple’,5)<br>13<br>string1.find(‘apple’,7,20)<br>13<br>string1.find(‘apple’,14,20)<br>-1<br>string1.find(‘apple’,14,24)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="19"><a href="#19" class="headerlink" title="19"></a>19</h2><p>对比：<br>[index()] 返回指定字符的索引位<br>函数格式：index(子字符串[,开始索引位，结束索引位])<br>返回值：如果找到指定的字符串，则返回其索引位；如果找不到就报错ValueError</p>
-<h2 id="find-与-index-函数的区别"><a href="#find-与-index-函数的区别" class="headerlink" title="[find()]与[index()]函数的区别"></a>[find()]与[index()]函数的区别</h2><p>第一，两者在执行结果时类似的，如果找到指定的字符就会返回其索引位<br>第二，find()如果找不到指定的字符时，返回-1；而index()找不到指定的字符，raise ValueError.</p>
-<h2 id="第三，从效率上来讲，index的查询速度要优于find-因为在python中对于像字符串这样的有序数据类型，会产生一个索引对象来自动维护其序列，find-函数不管是否有这样的序列，都需要在字符串本身进行逐一查找，而index-会通过这个索引对象的映射方式，来快速找到对应的索引位。"><a href="#第三，从效率上来讲，index的查询速度要优于find-因为在python中对于像字符串这样的有序数据类型，会产生一个索引对象来自动维护其序列，find-函数不管是否有这样的序列，都需要在字符串本身进行逐一查找，而index-会通过这个索引对象的映射方式，来快速找到对应的索引位。" class="headerlink" title="第三，从效率上来讲，index的查询速度要优于find,因为在python中对于像字符串这样的有序数据类型，会产生一个索引对象来自动维护其序列，find()函数不管是否有这样的序列，都需要在字符串本身进行逐一查找，而index()会通过这个索引对象的映射方式，来快速找到对应的索引位。"></a>第三，从效率上来讲，index的查询速度要优于find,因为在python中对于像字符串这样的有序数据类型，会产生一个索引对象来自动维护其序列，find()函数不管是否有这样的序列，都需要在字符串本身进行逐一查找，而index()会通过这个索引对象的映射方式，来快速找到对应的索引位。</h2><p>#2）split() 拆分字符串<br>函数格式：str.split([分隔符])</p>
-<h2 id="返回值：根据指定的分隔符，对字符串进行拆分，返回一个列表；如果不指定分隔符，那么会将整个字符串，作为列表的一个元素。例如："><a href="#返回值：根据指定的分隔符，对字符串进行拆分，返回一个列表；如果不指定分隔符，那么会将整个字符串，作为列表的一个元素。例如：" class="headerlink" title="返回值：根据指定的分隔符，对字符串进行拆分，返回一个列表；如果不指定分隔符，那么会将整个字符串，作为列表的一个元素。例如："></a>返回值：根据指定的分隔符，对字符串进行拆分，返回一个列表；如果不指定分隔符，那么会将整个字符串，作为列表的一个元素。例如：</h2><p>string1 = ‘tv,pc,notebook,phone’</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>string1.split(‘,’)<br>[‘tv’, ‘pc’, ‘notebook’, ‘phone’]<br>string1.split()</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="‘tv-pc-notebook-phone’"><a href="#‘tv-pc-notebook-phone’" class="headerlink" title="[‘tv,pc,notebook,phone’]"></a>[‘tv,pc,notebook,phone’]</h2><p>注意：split中的分隔符，我们根据字符串中的实际情况而定。如果使用了不正确的分隔符，str.split(‘错误分隔符’)操作结果str.split(),会将整个字符串作为列表的一个元素。</p>
-<p>#3）strip() 字符串左右两端去除指定字符（默认情况，去除空格）<br>函数格式：str.strip([指定字符])<br>返回值：根据指定的字符，对字符串进行两端去除其内容，返回一个新的字符串。如果字符串中间有空格或指定字符，那么该函数不起作用。如果指定的字符在字符串左右两端不存在，那么将返回字符串本身。<br>例如：</p>
-<h2 id="缺省情况"><a href="#缺省情况" class="headerlink" title="缺省情况"></a>缺省情况</h2><p>string1 = ‘  hello world  ‘</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>string1.strip()<br>‘hello world’<br>print(string1)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="hello-world"><a href="#hello-world" class="headerlink" title="  hello world  "></a>  hello world  </h2><h2 id="指定字符"><a href="#指定字符" class="headerlink" title="指定字符"></a>指定字符</h2><p>string1 = ‘awelcom to zhengzhoua’</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>string1.strip(‘a’)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="‘welcom-to-zhengzhou’"><a href="#‘welcom-to-zhengzhou’" class="headerlink" title="‘welcom to zhengzhou’"></a>‘welcom to zhengzhou’</h2><p>注意：<br>1）字符串类型，一旦被声明赋值后，其内容是不可被改变的，如果需要改变原字符串变量的值，必须对其进行重新赋值。</p>
-<h2 id="2）如果指定字符内容为一个字符序列，那么意味着使用strip去除左右两端指定字符时，只要符合字符序列中的某一位，就进行去除"><a href="#2）如果指定字符内容为一个字符序列，那么意味着使用strip去除左右两端指定字符时，只要符合字符序列中的某一位，就进行去除" class="headerlink" title="2）如果指定字符内容为一个字符序列，那么意味着使用strip去除左右两端指定字符时，只要符合字符序列中的某一位，就进行去除"></a>2）如果指定字符内容为一个字符序列，那么意味着使用strip去除左右两端指定字符时，只要符合字符序列中的某一位，就进行去除</h2><p>string1 = ‘ awelcom to zhengzhouab’</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>string1.strip(‘ ab’)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="‘welcom-to-zhengzhou’-1"><a href="#‘welcom-to-zhengzhou’-1" class="headerlink" title="‘welcom to zhengzhou’"></a>‘welcom to zhengzhou’</h2><p>#4）replace()替换函数<br>函数格式：str.replace(old,new[,max])<br>返回值：将指定字符串（old）替换为新字符串（new）,最大可以替换max次。替换完成后，返回一个新字符串。<br>注意：此处的max参数，主要用来指定替换的次数，如果该参数缺省，表示替换里面所有符合条件的字符串。</p>
-<h2 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h2><p>string1 = ‘honor,oppo,vivo,apple,oppo,oppo’</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>old_str = ‘oppo’<br>new_str = ‘xiaomi’<br>string1.replace(old_str, new_str)     # 替换所有的oppo<br>‘honor,xiaomi,vivo,apple,xiaomi,xiaomi’<br>string1.replace(old_str, new_str,2)   #替换指定次数，即两处oppo</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="‘honor-xiaomi-vivo-apple-xiaomi-oppo’"><a href="#‘honor-xiaomi-vivo-apple-xiaomi-oppo’" class="headerlink" title="‘honor,xiaomi,vivo,apple,xiaomi,oppo’"></a>‘honor,xiaomi,vivo,apple,xiaomi,oppo’</h2><p>#5）isalnum()、isalpha()、isdigit()<br>函数格式：str.isalnum()    判断字符串内容，是否有数字或字母组成<br>          str.isalpha()    判断字符串内容，是否由字母组成<br>          str.isdigit()    判断字符串内容，是否由数字组成<br>返回值：如果符合条件，返回True；如果不符合，返回False。</p>
-<p>#6）[] 字符串运算符<br>使用方法：str[索引位] =&gt; 返回指定索引位的字符，</p>
-<h2 id="索引位有两种表示方式："><a href="#索引位有两种表示方式：" class="headerlink" title="索引位有两种表示方式："></a>索引位有两种表示方式：</h2><h2 id="string1-hello-world"><a href="#string1-hello-world" class="headerlink" title="string1 = hello world"></a>string1 = hello world</h2><p>第一种：string1[0] =&gt; h    到string1[10] =&gt; d<br>第二种：string1[-1] =&gt; d   到string1[-11] =&gt; h<br>切片操作:<br>格式：str[start,end,step]<br>start：代表切片开始的索引位<br>end: 代表切片结束的索引位（但是不会输出该索引位指向的字符）</p>
-<h2 id="step：代表每隔次几个字符个数截取一个"><a href="#step：代表每隔次几个字符个数截取一个" class="headerlink" title="step：代表每隔次几个字符个数截取一个"></a>step：代表每隔次几个字符个数截取一个</h2><p>string1 = hello world<br>string1[0:3] =&gt; hel   从索引位为0的字符开始，到索引位3结束，但不包括索引位3所指向的字符。<br>string1[2:4] =&gt; ll<br>string1[0:-1] =&gt; hello worl </p>
-<h2 id="string1-0-8-2-gt-hlow"><a href="#string1-0-8-2-gt-hlow" class="headerlink" title="string1[0:8:2] =&gt; hlow"></a>string1[0:8:2] =&gt; hlow</h2><hr>
-<p>str1[:]  =&gt; ‘hello world’ 等于将字符串进行复制<br>str1[:5] =&gt; ‘hello’       如果没有标明开始索引位，默认从0开始</p>
-<h2 id="str1-gt-‘hello-world’-等同于str1"><a href="#str1-gt-‘hello-world’-等同于str1" class="headerlink" title="str1[::] =&gt; ‘hello world’  等同于str1[:]"></a>str1[::] =&gt; ‘hello world’  等同于str1[:]</h2><p>使用步长，实现字符串反转<br>string1[-1::-1]  =&gt;dlrow olleh    从索引位-1开始，一直到字符串结束，反向输出字符</p>
-<h2 id="但是下列操作，会返回一个空字符串："><a href="#但是下列操作，会返回一个空字符串：" class="headerlink" title="但是下列操作，会返回一个空字符串："></a>但是下列操作，会返回一个空字符串：</h2><p>string1[-1:4]  =&gt; ‘’</p>
-<h2 id="string1-1-5-gt-‘’"><a href="#string1-1-5-gt-‘’" class="headerlink" title="string1[-1:-5] =&gt; ‘’"></a>string1[-1:-5] =&gt; ‘’</h2><p>#7）连接符与重复操作符<br>+：在字符串中使用时，作为连接两个字符串，并返回一个新字符串的作用来使用。<br><em>：重复操作指定的次数，即将字符串重复输出N次。返回一个新字符串。<br>注意：在重复操作中，必须遵循：字符串</em>正整数这样的格式，如果数值不是正整数，其结果返回一个空字符串，如果不是数值类型，程序报错。</p>
-<p>#8）in运算符<br>用来检测指定的内容，是否在字符串中，如果存在则返回True，反之返回False</p>
-<h2 id="例如"><a href="#例如" class="headerlink" title="例如:"></a>例如:</h2><p>string1 = ‘hello world’</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>substr = ‘e’<br>substr in string1<br>True<br>substr = ‘ll’<br>substr in string1<br>True<br>substr = ‘wr’<br>substr in string1</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="False"><a href="#False" class="headerlink" title="False"></a>False</h2>
+<p>#1）find() 查找<br>函数格式：str.find(子字符串[,开始索引位，结束索引位])<br>返回值：如果查找成功，则返回所查找内容在字符串中的索引位置，如果没有找到，返回-1.<br>注意：如果所查找的内容中，有多个相同的字母，只会返回第一个字母所在的索引位。比如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str1 = <span class="string">'hello'</span></span><br><span class="line">str1.find(<span class="string">'ll'</span>) =&gt; 2</span><br></pre></td></tr></table></figure></p>
+<p>该例中，’ll’在字符串中出现了两次，但只会返回第一次出现的索引位置。<br>为什么查找时，没有找到目标字符串的情况下会返回-1。其实，在find操作中，会对字符串进行扫描从字符串的索引位0开始，一直到字符串结尾，如果在字符串最后一位没有找到匹配的内容，将指向字符串结束符(EOF)，该结束符为-1。所以找不到时，find返回值为-1.<br>更多用法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">'apple,banana,apple,apple'</span></span><br><span class="line">&gt;&gt;&gt; string1.find(<span class="string">'apple'</span>)</span><br><span class="line">0</span><br><span class="line">&gt;&gt;&gt; string1.find(<span class="string">'apple'</span>,5)</span><br><span class="line">13</span><br><span class="line">&gt;&gt;&gt; string1.find(<span class="string">'apple'</span>,7,20)</span><br><span class="line">13</span><br><span class="line">&gt;&gt;&gt; string1.find(<span class="string">'apple'</span>,14,20)</span><br><span class="line">-1</span><br><span class="line">&gt;&gt;&gt; string1.find(<span class="string">'apple'</span>,14,24)</span><br><span class="line">19</span><br></pre></td></tr></table></figure></p>
+<p>对比：<br>[index()] 返回指定字符的索引位<br>函数格式：index(子字符串[,开始索引位，结束索引位])<br>返回值：如果找到指定的字符串，则返回其索引位；如果找不到就报错ValueError</p>
+<p>[find()]与[index()]函数的区别<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">第一，两者在执行结果时类似的，如果找到指定的字符就会返回其索引位</span><br><span class="line">第二，find()如果找不到指定的字符时，返回-1；而index()找不到指定的字符，raise ValueError.</span><br><span class="line">第三，从效率上来讲，index的查询速度要优于find,因为在python中对于像字符串这样的有序数据类型，会产生一个索引对象来自动维护其序列，find()函数不管是否有这样的序列，都需要在字符串本身进行逐一查找，而index()会通过这个索引对象的映射方式，来快速找到对应的索引位。</span><br></pre></td></tr></table></figure></p>
+<p>#2）split() 拆分字符串<br>函数格式：str.split([分隔符])<br>返回值：根据指定的分隔符，对字符串进行拆分，返回一个列表；如果不指定分隔符，那么会将整个字符串，作为列表的一个元素。例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">'tv,pc,notebook,phone'</span></span><br><span class="line">&gt;&gt;&gt; string1.split(<span class="string">','</span>)</span><br><span class="line">[<span class="string">'tv'</span>, <span class="string">'pc'</span>, <span class="string">'notebook'</span>, <span class="string">'phone'</span>]</span><br><span class="line">&gt;&gt;&gt; string1.split()</span><br><span class="line">[<span class="string">'tv,pc,notebook,phone'</span>]</span><br></pre></td></tr></table></figure></p>
+<p>注意：split中的分隔符，我们根据字符串中的实际情况而定。如果使用了不正确的分隔符，str.split(‘错误分隔符’)操作结果str.split(),会将整个字符串作为列表的一个元素。</p>
+<p>#3）strip() 字符串左右两端去除指定字符（默认情况，去除空格）<br>函数格式：str.strip([指定字符])<br>返回值：根据指定的字符，对字符串进行两端去除其内容，返回一个新的字符串。如果字符串中间有空格或指定字符，那么该函数不起作用。如果指定的字符在字符串左右两端不存在，那么将返回字符串本身。<br>例如：<br>缺省情况<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">'  hello world  '</span></span><br><span class="line">&gt;&gt;&gt; string1.strip()</span><br><span class="line"><span class="string">'hello world'</span></span><br><span class="line">&gt;&gt;&gt; <span class="built_in">print</span>(string1)</span><br><span class="line">  hello world</span><br></pre></td></tr></table></figure></p>
+<p>指定字符<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">'awelcom to zhengzhoua'</span></span><br><span class="line">&gt;&gt;&gt; string1.strip(<span class="string">'a'</span>)</span><br><span class="line"><span class="string">'welcom to zhengzhou'</span></span><br></pre></td></tr></table></figure></p>
+<p>注意：<br>1）字符串类型，一旦被声明赋值后，其内容是不可被改变的，如果需要改变原字符串变量的值，必须对其进行重新赋值。<br>2）如果指定字符内容为一个字符序列，那么意味着使用strip去除左右两端指定字符时，只要符合字符序列中的某一位，就进行去除<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">' awelcom to zhengzhouab'</span></span><br><span class="line">&gt;&gt;&gt; string1.strip(<span class="string">' ab'</span>)</span><br><span class="line"><span class="string">'welcom to zhengzhou'</span></span><br></pre></td></tr></table></figure></p>
+<p>#4）replace()替换函数<br>函数格式：str.replace(old,new[,max])<br>返回值：将指定字符串（old）替换为新字符串（new）,最大可以替换max次。替换完成后，返回一个新字符串。<br>注意：此处的max参数，主要用来指定替换的次数，如果该参数缺省，表示替换里面所有符合条件的字符串。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">'honor,oppo,vivo,apple,oppo,oppo'</span></span><br><span class="line">&gt;&gt;&gt; old_str = <span class="string">'oppo'</span></span><br><span class="line">&gt;&gt;&gt; new_str = <span class="string">'xiaomi'</span></span><br><span class="line">&gt;&gt;&gt; string1.replace(old_str, new_str)     <span class="comment"># 替换所有的oppo</span></span><br><span class="line"><span class="string">'honor,xiaomi,vivo,apple,xiaomi,xiaomi'</span></span><br><span class="line">&gt;&gt;&gt; string1.replace(old_str, new_str,2)   <span class="comment">#替换指定次数，即两处oppo</span></span><br><span class="line"><span class="string">'honor,xiaomi,vivo,apple,xiaomi,oppo'</span></span><br></pre></td></tr></table></figure></p>
+<p>#5）isalnum()、isalpha()、isdigit()<br>函数格式：str.isalnum()    判断字符串内容，是否有数字或字母组成<br>          str.isalpha()    判断字符串内容，是否由字母组成<br>          str.isdigit()    判断字符串内容，是否由数字组成<br>返回值：如果符合条件，返回True；如果不符合，返回False。</p>
+<p>#6）[] 字符串运算符<br>使用方法：str[索引位] =&gt; 返回指定索引位的字符，<br>索引位有两种表示方式：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string1 = hello world</span><br></pre></td></tr></table></figure></p>
+<p>第一种：string1[0] =&gt; h    到string1[10] =&gt; d<br>第二种：string1[-1] =&gt; d   到string1[-11] =&gt; h<br>切片操作:<br>格式：str[start,end,step]<br>start：代表切片开始的索引位<br>end: 代表切片结束的索引位（但是不会输出该索引位指向的字符）<br>step：代表每隔次几个字符个数截取一个<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">string1 = hello world</span><br><span class="line">string1[0:3] =&gt; hel   从索引位为0的字符开始，到索引位3结束，但不包括索引位3所指向的字符。</span><br><span class="line">string1[2:4] =&gt; ll</span><br><span class="line">string1[0:-1] =&gt; hello worl </span><br><span class="line">string1[0:8:2] =&gt; hlow</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">str1[:]  =&gt; <span class="string">'hello world'</span> 等于将字符串进行复制</span><br><span class="line">str1[:5] =&gt; <span class="string">'hello'</span>       如果没有标明开始索引位，默认从0开始</span><br><span class="line">str1[::] =&gt; <span class="string">'hello world'</span>  等同于str1[:]</span><br></pre></td></tr></table></figure>
+<p>使用步长，实现字符串反转<br>string1[-1::-1]  =&gt;dlrow olleh    从索引位-1开始，一直到字符串结束，反向输出字符<br>但是下列操作，会返回一个空字符串：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string1[-1:4]  =&gt; <span class="string">''</span></span><br><span class="line">string1[-1:-5] =&gt; <span class="string">''</span></span><br></pre></td></tr></table></figure></p>
+<p>#7）连接符与重复操作符<br>+：在字符串中使用时，作为连接两个字符串，并返回一个新字符串的作用来使用。<br><em>：重复操作指定的次数，即将字符串重复输出N次。返回一个新字符串。<br>注意：在重复操作中，必须遵循：字符串</em>正整数这样的格式，如果数值不是正整数，其结果返回一个空字符串，如果不是数值类型，程序报错。</p>
+<p>#8）in运算符<br>用来检测指定的内容，是否在字符串中，如果存在则返回True，反之返回False<br>例如:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">string1 = <span class="string">'hello world'</span></span><br><span class="line">&gt;&gt;&gt; substr = <span class="string">'e'</span></span><br><span class="line">&gt;&gt;&gt; substr <span class="keyword">in</span> string1</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; substr = <span class="string">'ll'</span></span><br><span class="line">&gt;&gt;&gt; substr <span class="keyword">in</span> string1</span><br><span class="line">True</span><br><span class="line">substr = <span class="string">'wr'</span></span><br><span class="line">&gt;&gt;&gt; substr <span class="keyword">in</span> string1</span><br><span class="line">False</span><br></pre></td></tr></table></figure></p>
+
       
 
       
