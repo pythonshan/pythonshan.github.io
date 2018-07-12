@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/7 | 落幕的技术博客</title>
+  <title>基本数据类型 | 落幕的技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="Python、爬虫、Web开发">
-<meta property="og:type" content="website">
-<meta property="og:title" content="落幕的技术博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/07/index.html">
+  <meta name="description" content="#字符串 ##1、字符串声明，可以使用’’也可以使用””，他们都可以表示字符串内容。 ##2、比较运算符：  、&amp;lt;、==、!=、&amp;gt;=、&amp;lt;=他们的返回值为布尔型，即True或False字符串进行比较时，采用对应位置的逐字母进行比较，首先将字母转成ASCII码，然后根据码值进行比较大小。如果一旦出现一方的字母码值大于另一方，就结束比较。提示：在键盘上，所有的字符的ASCII码值都小于">
+<meta name="keywords" content="Python、爬虫、Web开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基本数据类型">
+<meta property="og:url" content="http://yoursite.com/2018/07/12/lesson04/index.html">
 <meta property="og:site_name" content="落幕的技术博客">
+<meta property="og:description" content="#字符串 ##1、字符串声明，可以使用’’也可以使用””，他们都可以表示字符串内容。 ##2、比较运算符：  、&amp;lt;、==、!=、&amp;gt;=、&amp;lt;=他们的返回值为布尔型，即True或False字符串进行比较时，采用对应位置的逐字母进行比较，首先将字母转成ASCII码，然后根据码值进行比较大小。如果一旦出现一方的字母码值大于另一方，就结束比较。提示：在键盘上，所有的字符的ASCII码值都小于">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-12T13:30:34.748Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="落幕的技术博客">
+<meta name="twitter:title" content="基本数据类型">
+<meta name="twitter:description" content="#字符串 ##1、字符串声明，可以使用’’也可以使用””，他们都可以表示字符串内容。 ##2、比较运算符：  、&amp;lt;、==、!=、&amp;gt;=、&amp;lt;=他们的返回值为布尔型，即True或False字符串进行比较时，采用对应位置的逐字母进行比较，首先将字母转成ASCII码，然后根据码值进行比较大小。如果一旦出现一方的字母码值大于另一方，就结束比较。提示：在键盘上，所有的字符的ASCII码值都小于">
   
     <link rel="alternative" href="/atom.xml" title="落幕的技术博客" type="application/atom+xml">
   
@@ -151,157 +155,239 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-lesson04" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      基本数据类型
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/12/lesson04/" class="archive-article-date">
+
+        
+        <a href="/2018/07/12/lesson04/" class="archive-article-date">
   	<time datetime="2018-07-12T13:30:45.229Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-12</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/12/lesson04/">基本数据类型</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#字符串</p>
+<p>##1、字符串声明，可以使用’’也可以使用””，他们都可以表示字符串内容。</p>
+<p>##2、比较运算符：</p>
+<blockquote>
+<p>、&lt;、==、!=、&gt;=、&lt;=<br>他们的返回值为布尔型，即True或False<br>字符串进行比较时，采用对应位置的逐字母进行比较，首先将字母转成ASCII码，然后根据码值进行比较大小。如果一旦出现一方的字母码值大于另一方，就结束比较。<br>提示：在键盘上，所有的字符的ASCII码值都小于a,b,c…..这些字母的码值<br>只有这四个字符的ASCII码值大于字母z的码值：’{‘、’|’、’}’、’~’，它们的码值从123-126</p>
+</blockquote>
+<p>##3、我们使用input()，允许进行交互式输入，默认input()输入的值类型为str字符串类型。</p>
+<p>##4、字符串常用的方法</p>
+<p>#1）find() 查找<br>函数格式：str.find(子字符串[,开始索引位，结束索引位])<br>返回值：如果查找成功，则返回所查找内容在字符串中的索引位置，如果没有找到，返回-1.</p>
+<h2 id="注意：如果所查找的内容中，有多个相同的字母，只会返回第一个字母所在的索引位。比如："><a href="#注意：如果所查找的内容中，有多个相同的字母，只会返回第一个字母所在的索引位。比如：" class="headerlink" title="注意：如果所查找的内容中，有多个相同的字母，只会返回第一个字母所在的索引位。比如："></a>注意：如果所查找的内容中，有多个相同的字母，只会返回第一个字母所在的索引位。比如：</h2><p>str1 = ‘hello’</p>
+<h2 id="str1-find-‘ll’-gt-2"><a href="#str1-find-‘ll’-gt-2" class="headerlink" title="str1.find(‘ll’) =&gt; 2 "></a>str1.find(‘ll’) =&gt; 2 </h2><p>该例中，’ll’在字符串中出现了两次，但只会返回第一次出现的索引位置。<br>为什么查找时，没有找到目标字符串的情况下会返回-1。其实，在find操作中，会对字符串进行扫描从字符串的索引位0开始，一直到字符串结尾，如果在字符串最后一位没有找到匹配的内容，将指向字符串结束符(EOF)，该结束符为-1。所以找不到时，find返回值为-1.</p>
+<h2 id="更多用法："><a href="#更多用法：" class="headerlink" title="更多用法："></a>更多用法：</h2><p>string1 = ‘apple,banana,apple,apple’</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>string1.find(‘apple’)<br>0<br>string1.find(‘apple’,5)<br>13<br>string1.find(‘apple’,7,20)<br>13<br>string1.find(‘apple’,14,20)<br>-1<br>string1.find(‘apple’,14,24)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="19"><a href="#19" class="headerlink" title="19"></a>19</h2><p>对比：<br>[index()] 返回指定字符的索引位<br>函数格式：index(子字符串[,开始索引位，结束索引位])<br>返回值：如果找到指定的字符串，则返回其索引位；如果找不到就报错ValueError</p>
+<h2 id="find-与-index-函数的区别"><a href="#find-与-index-函数的区别" class="headerlink" title="[find()]与[index()]函数的区别"></a>[find()]与[index()]函数的区别</h2><p>第一，两者在执行结果时类似的，如果找到指定的字符就会返回其索引位<br>第二，find()如果找不到指定的字符时，返回-1；而index()找不到指定的字符，raise ValueError.</p>
+<h2 id="第三，从效率上来讲，index的查询速度要优于find-因为在python中对于像字符串这样的有序数据类型，会产生一个索引对象来自动维护其序列，find-函数不管是否有这样的序列，都需要在字符串本身进行逐一查找，而index-会通过这个索引对象的映射方式，来快速找到对应的索引位。"><a href="#第三，从效率上来讲，index的查询速度要优于find-因为在python中对于像字符串这样的有序数据类型，会产生一个索引对象来自动维护其序列，find-函数不管是否有这样的序列，都需要在字符串本身进行逐一查找，而index-会通过这个索引对象的映射方式，来快速找到对应的索引位。" class="headerlink" title="第三，从效率上来讲，index的查询速度要优于find,因为在python中对于像字符串这样的有序数据类型，会产生一个索引对象来自动维护其序列，find()函数不管是否有这样的序列，都需要在字符串本身进行逐一查找，而index()会通过这个索引对象的映射方式，来快速找到对应的索引位。"></a>第三，从效率上来讲，index的查询速度要优于find,因为在python中对于像字符串这样的有序数据类型，会产生一个索引对象来自动维护其序列，find()函数不管是否有这样的序列，都需要在字符串本身进行逐一查找，而index()会通过这个索引对象的映射方式，来快速找到对应的索引位。</h2><p>#2）split() 拆分字符串<br>函数格式：str.split([分隔符])</p>
+<h2 id="返回值：根据指定的分隔符，对字符串进行拆分，返回一个列表；如果不指定分隔符，那么会将整个字符串，作为列表的一个元素。例如："><a href="#返回值：根据指定的分隔符，对字符串进行拆分，返回一个列表；如果不指定分隔符，那么会将整个字符串，作为列表的一个元素。例如：" class="headerlink" title="返回值：根据指定的分隔符，对字符串进行拆分，返回一个列表；如果不指定分隔符，那么会将整个字符串，作为列表的一个元素。例如："></a>返回值：根据指定的分隔符，对字符串进行拆分，返回一个列表；如果不指定分隔符，那么会将整个字符串，作为列表的一个元素。例如：</h2><p>string1 = ‘tv,pc,notebook,phone’</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>string1.split(‘,’)<br>[‘tv’, ‘pc’, ‘notebook’, ‘phone’]<br>string1.split()</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="‘tv-pc-notebook-phone’"><a href="#‘tv-pc-notebook-phone’" class="headerlink" title="[‘tv,pc,notebook,phone’]"></a>[‘tv,pc,notebook,phone’]</h2><p>注意：split中的分隔符，我们根据字符串中的实际情况而定。如果使用了不正确的分隔符，str.split(‘错误分隔符’)操作结果str.split(),会将整个字符串作为列表的一个元素。</p>
+<p>#3）strip() 字符串左右两端去除指定字符（默认情况，去除空格）<br>函数格式：str.strip([指定字符])<br>返回值：根据指定的字符，对字符串进行两端去除其内容，返回一个新的字符串。如果字符串中间有空格或指定字符，那么该函数不起作用。如果指定的字符在字符串左右两端不存在，那么将返回字符串本身。<br>例如：</p>
+<h2 id="缺省情况"><a href="#缺省情况" class="headerlink" title="缺省情况"></a>缺省情况</h2><p>string1 = ‘  hello world  ‘</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>string1.strip()<br>‘hello world’<br>print(string1)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="hello-world"><a href="#hello-world" class="headerlink" title="  hello world  "></a>  hello world  </h2><h2 id="指定字符"><a href="#指定字符" class="headerlink" title="指定字符"></a>指定字符</h2><p>string1 = ‘awelcom to zhengzhoua’</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>string1.strip(‘a’)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="‘welcom-to-zhengzhou’"><a href="#‘welcom-to-zhengzhou’" class="headerlink" title="‘welcom to zhengzhou’"></a>‘welcom to zhengzhou’</h2><p>注意：<br>1）字符串类型，一旦被声明赋值后，其内容是不可被改变的，如果需要改变原字符串变量的值，必须对其进行重新赋值。</p>
+<h2 id="2）如果指定字符内容为一个字符序列，那么意味着使用strip去除左右两端指定字符时，只要符合字符序列中的某一位，就进行去除"><a href="#2）如果指定字符内容为一个字符序列，那么意味着使用strip去除左右两端指定字符时，只要符合字符序列中的某一位，就进行去除" class="headerlink" title="2）如果指定字符内容为一个字符序列，那么意味着使用strip去除左右两端指定字符时，只要符合字符序列中的某一位，就进行去除"></a>2）如果指定字符内容为一个字符序列，那么意味着使用strip去除左右两端指定字符时，只要符合字符序列中的某一位，就进行去除</h2><p>string1 = ‘ awelcom to zhengzhouab’</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>string1.strip(‘ ab’)</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="‘welcom-to-zhengzhou’-1"><a href="#‘welcom-to-zhengzhou’-1" class="headerlink" title="‘welcom to zhengzhou’"></a>‘welcom to zhengzhou’</h2><p>#4）replace()替换函数<br>函数格式：str.replace(old,new[,max])<br>返回值：将指定字符串（old）替换为新字符串（new）,最大可以替换max次。替换完成后，返回一个新字符串。<br>注意：此处的max参数，主要用来指定替换的次数，如果该参数缺省，表示替换里面所有符合条件的字符串。</p>
+<h2 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h2><p>string1 = ‘honor,oppo,vivo,apple,oppo,oppo’</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>old_str = ‘oppo’<br>new_str = ‘xiaomi’<br>string1.replace(old_str, new_str)     # 替换所有的oppo<br>‘honor,xiaomi,vivo,apple,xiaomi,xiaomi’<br>string1.replace(old_str, new_str,2)   #替换指定次数，即两处oppo</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="‘honor-xiaomi-vivo-apple-xiaomi-oppo’"><a href="#‘honor-xiaomi-vivo-apple-xiaomi-oppo’" class="headerlink" title="‘honor,xiaomi,vivo,apple,xiaomi,oppo’"></a>‘honor,xiaomi,vivo,apple,xiaomi,oppo’</h2><p>#5）isalnum()、isalpha()、isdigit()<br>函数格式：str.isalnum()    判断字符串内容，是否有数字或字母组成<br>          str.isalpha()    判断字符串内容，是否由字母组成<br>          str.isdigit()    判断字符串内容，是否由数字组成<br>返回值：如果符合条件，返回True；如果不符合，返回False。</p>
+<p>#6）[] 字符串运算符<br>使用方法：str[索引位] =&gt; 返回指定索引位的字符，</p>
+<h2 id="索引位有两种表示方式："><a href="#索引位有两种表示方式：" class="headerlink" title="索引位有两种表示方式："></a>索引位有两种表示方式：</h2><h2 id="string1-hello-world"><a href="#string1-hello-world" class="headerlink" title="string1 = hello world"></a>string1 = hello world</h2><p>第一种：string1[0] =&gt; h    到string1[10] =&gt; d<br>第二种：string1[-1] =&gt; d   到string1[-11] =&gt; h<br>切片操作:<br>格式：str[start,end,step]<br>start：代表切片开始的索引位<br>end: 代表切片结束的索引位（但是不会输出该索引位指向的字符）</p>
+<h2 id="step：代表每隔次几个字符个数截取一个"><a href="#step：代表每隔次几个字符个数截取一个" class="headerlink" title="step：代表每隔次几个字符个数截取一个"></a>step：代表每隔次几个字符个数截取一个</h2><p>string1 = hello world<br>string1[0:3] =&gt; hel   从索引位为0的字符开始，到索引位3结束，但不包括索引位3所指向的字符。<br>string1[2:4] =&gt; ll<br>string1[0:-1] =&gt; hello worl </p>
+<h2 id="string1-0-8-2-gt-hlow"><a href="#string1-0-8-2-gt-hlow" class="headerlink" title="string1[0:8:2] =&gt; hlow"></a>string1[0:8:2] =&gt; hlow</h2><hr>
+<p>str1[:]  =&gt; ‘hello world’ 等于将字符串进行复制<br>str1[:5] =&gt; ‘hello’       如果没有标明开始索引位，默认从0开始</p>
+<h2 id="str1-gt-‘hello-world’-等同于str1"><a href="#str1-gt-‘hello-world’-等同于str1" class="headerlink" title="str1[::] =&gt; ‘hello world’  等同于str1[:]"></a>str1[::] =&gt; ‘hello world’  等同于str1[:]</h2><p>使用步长，实现字符串反转<br>string1[-1::-1]  =&gt;dlrow olleh    从索引位-1开始，一直到字符串结束，反向输出字符</p>
+<h2 id="但是下列操作，会返回一个空字符串："><a href="#但是下列操作，会返回一个空字符串：" class="headerlink" title="但是下列操作，会返回一个空字符串："></a>但是下列操作，会返回一个空字符串：</h2><p>string1[-1:4]  =&gt; ‘’</p>
+<h2 id="string1-1-5-gt-‘’"><a href="#string1-1-5-gt-‘’" class="headerlink" title="string1[-1:-5] =&gt; ‘’"></a>string1[-1:-5] =&gt; ‘’</h2><p>#7）连接符与重复操作符<br>+：在字符串中使用时，作为连接两个字符串，并返回一个新字符串的作用来使用。<br><em>：重复操作指定的次数，即将字符串重复输出N次。返回一个新字符串。<br>注意：在重复操作中，必须遵循：字符串</em>正整数这样的格式，如果数值不是正整数，其结果返回一个空字符串，如果不是数值类型，程序报错。</p>
+<p>#8）in运算符<br>用来检测指定的内容，是否在字符串中，如果存在则返回True，反之返回False</p>
+<h2 id="例如"><a href="#例如" class="headerlink" title="例如:"></a>例如:</h2><p>string1 = ‘hello world’</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>substr = ‘e’<br>substr in string1<br>True<br>substr = ‘ll’<br>substr in string1<br>True<br>substr = ‘wr’<br>substr in string1</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="False"><a href="#False" class="headerlink" title="False"></a>False</h2>
+      
 
-        <div class="article-info info-on-right">
-          
-          
-
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/12/lesson04/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/12/lesson03/" class="archive-article-date">
-  	<time datetime="2018-07-12T13:24:25.247Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-12</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/12/lesson03/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基本数据类型</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/12/lesson03/">基本数据类型</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/12/lesson02/" class="archive-article-date">
-  	<time datetime="2018-07-12T13:18:31.131Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/12/lesson02/">变量</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/12/lesson01/" class="archive-article-date">
-  	<time datetime="2018-07-12T12:54:53.240Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/12/lesson01/">python 基础编程</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/09/hello-world/" class="archive-article-date">
-  	<time datetime="2018-07-09T12:20:09.893Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/09/hello-world/">welocome to pythonshan</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -324,8 +410,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
