@@ -158,6 +158,234 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-lesson10" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/02/lesson10/">组合数据类型</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/02/lesson10/" class="archive-article-date">
+  	<time datetime="2018-08-02T00:58:05.354Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="函数嵌套"><a href="#函数嵌套" class="headerlink" title="函数嵌套"></a>函数嵌套</h1><h2 id="根据Python中，对函数的载入和调用特点。我们可以清楚看到，当Python运行相关文件时，如果遇到函数时，会先将其名字载入到内存中（即为函数名指定一个内存地址）。因此我们在使用函数名时，可以有以下三种情况："><a href="#根据Python中，对函数的载入和调用特点。我们可以清楚看到，当Python运行相关文件时，如果遇到函数时，会先将其名字载入到内存中（即为函数名指定一个内存地址）。因此我们在使用函数名时，可以有以下三种情况：" class="headerlink" title="根据Python中，对函数的载入和调用特点。我们可以清楚看到，当Python运行相关文件时，如果遇到函数时，会先将其名字载入到内存中（即为函数名指定一个内存地址）。因此我们在使用函数名时，可以有以下三种情况："></a>根据Python中，对函数的载入和调用特点。我们可以清楚看到，当Python运行相关文件时，如果遇到函数时，会先将其名字载入到内存中（即为函数名指定一个内存地址）。因此我们在使用函数名时，可以有以下三种情况：</h2><h3 id="1）将函数名赋值给变量"><a href="#1）将函数名赋值给变量" class="headerlink" title="1）将函数名赋值给变量"></a>1）将函数名赋值给变量</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">例如：</span><br><span class="line">def f1():</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">'ok'</span>)</span><br><span class="line"></span><br><span class="line">a = f1</span><br></pre></td></tr></table></figure>
+<p>这是变量a中的值就是f1()函数名的内存地址。</p>
+<h3 id="2）将函数名作为容器的元素"><a href="#2）将函数名作为容器的元素" class="headerlink" title="2）将函数名作为容器的元素"></a>2）将函数名作为容器的元素</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def f1():</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">'ok'</span>)</span><br><span class="line">ls = [1,2,f1]</span><br></pre></td></tr></table></figure>
+<p>注意，此时存入到列表ls中的f1，它的值仍然是该函数名对应的内存地址</p>
+<h3 id="3）将函数名作为另外一个函数的参数，进行传递"><a href="#3）将函数名作为另外一个函数的参数，进行传递" class="headerlink" title="3）将函数名作为另外一个函数的参数，进行传递"></a>3）将函数名作为另外一个函数的参数，进行传递</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def f1():</span><br><span class="line">   <span class="built_in">print</span>(<span class="string">'ok'</span>)</span><br><span class="line"></span><br><span class="line">def f2(x):</span><br><span class="line">   x()</span><br><span class="line">f2(f1)</span><br></pre></td></tr></table></figure>
+<p>其执行结果为OK，这种方式类似与函数的普通嵌套,代码如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def f2():</span><br><span class="line">   def f1():</span><br><span class="line">      <span class="built_in">print</span>(<span class="string">'ok'</span>)</span><br><span class="line">   f1()</span><br><span class="line">f2()</span><br></pre></td></tr></table></figure></p>
+<h2 id="6、闭包"><a href="#6、闭包" class="headerlink" title="6、闭包"></a>6、闭包</h2><h3 id="1）闭包格式"><a href="#1）闭包格式" class="headerlink" title="1）闭包格式"></a>1）闭包格式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">def outer():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'我是外部函数'</span>)</span><br><span class="line">    def inner():</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'我是闭包函数'</span>)</span><br><span class="line">    <span class="built_in">return</span> inner</span><br><span class="line"></span><br><span class="line">f = outer()</span><br><span class="line">f()</span><br><span class="line">```bash</span><br><span class="line"><span class="comment">## 通过对例子的观察，我们发现闭包函数的写法有如下特点：</span></span><br><span class="line">1、闭包函数作为内部函数，嵌套在外部函数中</span><br><span class="line">2、闭包函数会作为外部函数的返回值，进行返回。返回闭包函数时，只返回函数名，不带括号。</span><br><span class="line">3、外部调用时，首先要执行外部函数，然后将结果赋值给一个变量，此时该变量对应了闭包函数。</span><br><span class="line">4、我们可以通过__closure__内部函数可以观察到，闭包函数的存在。前提是，闭包函数要与外部函数进行数据传递或调用。</span><br><span class="line">总结：闭包使用的数据，必须是本身定义或外部函数中定义的相关变量，通常需要调用外部函数的数据，形成一个封闭的函数结构。不能与外部数据（全局变量）发生交流。</span><br><span class="line">2）闭包的应用—装饰器</span><br><span class="line">1、概念：装饰器本身仍然是一个函数。是我们队闭包应用的一种具体实现。</span><br><span class="line">2、作用：装饰器可以在不改变函数本身功能的情况下，为函数添加额外的功能。诸如：日志、测试、性能检测等。装饰器同样也是返回一个函数对象。</span><br><span class="line">3、用法：</span><br><span class="line">使用格式：@+装饰器名称</span><br><span class="line">```bash</span><br><span class="line">import time</span><br><span class="line">def outer(f):</span><br><span class="line">    def inner(*var):</span><br><span class="line">        start_time = time.time()</span><br><span class="line">        f(*var)</span><br><span class="line">        time.sleep(0.3)</span><br><span class="line">        end_time = time.time()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'此函数执行时间为&#123;0&#125;'</span>.format(str(end_time-start_time)))</span><br><span class="line">    <span class="built_in">return</span> inner</span><br><span class="line"></span><br><span class="line">@outer      <span class="comment"># 此处就是装饰器的声明，这种方法我们成为语法糖</span></span><br><span class="line">def func1():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'hello world'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="7、高阶函数"><a href="#7、高阶函数" class="headerlink" title="7、高阶函数"></a>7、高阶函数</h2><h3 id="1）匿名函数"><a href="#1）匿名函数" class="headerlink" title="1）匿名函数"></a>1）匿名函数</h3><p>使用lambda关键字进行修饰，没有显式声明函数的名字。格式如下：<br>lambda 参数：表达式（返回值）<br>注意，在使用匿名函数时，因为其自身的情况限制，匿名函数并不能执行比较复杂的业务逻辑，即函数内的代码不能过多。lambda本身是一个表达式</p>
+<h3 id="2）map函数（映射函数）"><a href="#2）map函数（映射函数）" class="headerlink" title="2）map函数（映射函数）"></a>2）map函数（映射函数）</h3><p>函数格式：map(func,iterable)<br>返回值：map 对象（迭代器）<br>说明：map函数主要作用是，将指定函数与序列中的元素进行映射，并完成函数中功能的批量操作，返回值为一个迭代器。我们可以使用for循环或next()函数进行遍历。通常情况下，如果映射的函数较为简单，我们就不单独声明函数，而是采用匿名函数来实现，这样也能提高运行效率。</p>
+<h3 id="3）reduce函数（归纳函数）"><a href="#3）reduce函数（归纳函数）" class="headerlink" title="3）reduce函数（归纳函数）"></a>3）reduce函数（归纳函数）</h3><p>函数格式：reduce(func,iterator)<br>返回值：返回函数计算结果，具体类型根据函数的返回值来定<br>说明：reduce函数中的func，一定要设为两个参数，用来接收迭代器返回的值。操作顺序为首先接收第一、第二个值，进行运算；运算结果再与第三个值进行运行，以此类推，直到迭代器迭代完全部数据。</p>
+<h3 id="4）filter函数（过滤函数）"><a href="#4）filter函数（过滤函数）" class="headerlink" title="4）filter函数（过滤函数）"></a>4）filter函数（过滤函数）</h3><p>函数格式：filter(func,iterable)<br>返回值：返回一个迭代器<br>说明：过滤函数与映射函数类似，都需要将函数作用于序列中的每个元素，根据函数判断True或False，返回相关元素。</p>
+<h2 id="8、递归"><a href="#8、递归" class="headerlink" title="8、递归"></a>8、递归</h2><p>递归概念：就是使用自身函数对自身进行调用，每调用一次将当前次的运行结果保存到函数的堆栈中，以副本形式保存，一直到最后完成全部调用。然后逐一向外将当期函数的结果返回并退出到其调用的位置。<br>在Python中，通常推荐使用迭代，递归本身对内存的消耗和运行效率低下的问题较少使用。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/02/lesson10/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-lesson09" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/26/lesson09/">组合数据类型</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/26/lesson09/" class="archive-article-date">
+  	<time datetime="2018-07-26T01:00:43.826Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="迭代器（Iterator）"><a href="#迭代器（Iterator）" class="headerlink" title="迭代器（Iterator）"></a>迭代器（Iterator）</h1><h2 id="1）概念：迭代器访问元素，是从第一个元素开始，依次访问后续元素直到结束。其中迭代器只能向前不能回退。其包含两个方法iter-和next-。"><a href="#1）概念：迭代器访问元素，是从第一个元素开始，依次访问后续元素直到结束。其中迭代器只能向前不能回退。其包含两个方法iter-和next-。" class="headerlink" title="1）概念：迭代器访问元素，是从第一个元素开始，依次访问后续元素直到结束。其中迭代器只能向前不能回退。其包含两个方法iter()和next()。"></a>1）概念：迭代器访问元素，是从第一个元素开始，依次访问后续元素直到结束。其中迭代器只能向前不能回退。其包含两个方法iter()和next()。</h2><p>iter()用来创建一个迭代器，next()用来访问下一个元素。<br>目前我们所学的字符串、列表、元组都可以创建迭代器，那么他们也是可迭代化的对象。<br>迭代器两个步骤：</p>
+<h3 id="1、当调用next-函数，会将迭代器当前位置状态进行改变"><a href="#1、当调用next-函数，会将迭代器当前位置状态进行改变" class="headerlink" title="1、当调用next()函数，会将迭代器当前位置状态进行改变"></a>1、当调用next()函数，会将迭代器当前位置状态进行改变</h3><h3 id="2、会将下一个元素进行返回"><a href="#2、会将下一个元素进行返回" class="headerlink" title="2、会将下一个元素进行返回"></a>2、会将下一个元素进行返回</h3><p>迭代器的延迟作用：迭代器生成的元素并不是在迭代器声明时，就准备好了的。通常时在调用迭代器需要提供该元素时生成的，也就是说只有在我们需要的时候迭代器才产生相关元素，不需要时并不会主动的生成相关元素。我们可以把迭代器看成一个容器，到我们需要时使用next()方法返回容器中的下一个值。<br>迭代器实现了工厂模式的对象，它在你每次访问下一个值的时候给你返回。</p>
+<p>可迭代化（iterable）：表明相关的对象可以创建迭代器对象，同时他们自身都是可以进行for数据遍历的。我们可以使用isinstance()来判断对象是否为可迭代化</p>
+<p>from collections import Iterable<br>string = ‘hello’<br>print(isinstance(string, Iterable))  =&gt; True<br>函数格式：isinstance(对象，类型)<br>返回值：布尔值<br>结果：如果指定的对象属于指定的类型，那么返回True，反之返回False</p>
+<p>enumerate()函数<br>函数格式：enumerate(iterable)<br>返回值：生成一个枚举对象<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">enum = enumberate([<span class="string">'one'</span>,<span class="string">'two'</span>,<span class="string">'three'</span>])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> enum:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">    </span><br><span class="line">(0, <span class="string">'one'</span>)</span><br><span class="line">(1, <span class="string">'two'</span>)</span><br><span class="line">(2, <span class="string">'three'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,value <span class="keyword">in</span> enum:</span><br><span class="line">    <span class="built_in">print</span>(i, value)</span><br><span class="line">   </span><br><span class="line">0 one</span><br><span class="line">1 two</span><br><span class="line">2 three</span><br></pre></td></tr></table></figure></p>
+<h1 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h1><h2 id="1、创建方式"><a href="#1、创建方式" class="headerlink" title="1、创建方式"></a>1、创建方式</h2><p>第一种，使用列表推导式，将[]改为()，生成一个generator对象<br>第二种，使用函数方式，采用yield关键字来实现</p>
+<h2 id="2、使用"><a href="#2、使用" class="headerlink" title="2、使用"></a>2、使用</h2><p>生成器我们通常可以认为一种特殊的迭代器，但是它不需要像迭代器一样去实现<strong>iter</strong>,<strong>next</strong>方法。只需要使用yield关键字，该关键字可以在每次调用生成器函数时起到暂停作用，并将其值进行返回。同时还会记录当前运行值的状态。</p>
+<h2 id="总结：迭代器和生成器"><a href="#总结：迭代器和生成器" class="headerlink" title="总结：迭代器和生成器"></a>总结：迭代器和生成器</h2><p>1、容器是一系列的元素集合，str、list、set、dict对象都可以看作是容器，容器都可以进行迭代（即用在while或for循环），凡是这样的容器我们都称为可迭代化对象（Iterable）。<br>2、可迭代化对象都实现了<strong>iter</strong>方法，该方法返回一个迭代器对象。<br>3、迭代器都拥有一个状态字段，用于记录下次迭代返回值。它实现了<strong>next</strong>和<strong>iter</strong>方法，迭代器不会一次性把所有的元素都加载到内存中，而是在需要的时候才生成返回结果。<br>4、生成器是一种特殊的迭代器，它的返回值不是通过return来返回的，而是通过yield来返回的。</p>
+<h2 id="copy-浅拷贝-和deepcopy-（深拷贝）"><a href="#copy-浅拷贝-和deepcopy-（深拷贝）" class="headerlink" title="copy()(浅拷贝)和deepcopy()（深拷贝）"></a>copy()(浅拷贝)和deepcopy()（深拷贝）</h2><h3 id="1、浅拷贝：我们使用copy-函数将列表中的元素，进行复制，通常对于普通的列表（一维）能够实现完全的值传递，即将自身的副本赋值给另外一个列表。例如："><a href="#1、浅拷贝：我们使用copy-函数将列表中的元素，进行复制，通常对于普通的列表（一维）能够实现完全的值传递，即将自身的副本赋值给另外一个列表。例如：" class="headerlink" title="1、浅拷贝：我们使用copy()函数将列表中的元素，进行复制，通常对于普通的列表（一维）能够实现完全的值传递，即将自身的副本赋值给另外一个列表。例如："></a>1、浅拷贝：我们使用copy()函数将列表中的元素，进行复制，通常对于普通的列表（一维）能够实现完全的值传递，即将自身的副本赋值给另外一个列表。例如：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls1 = [1,2,3,4,5]</span><br><span class="line">ls2 = ls1.copy()  <span class="comment"># 将ls1中的元素赋值给ls2,此时他们的值相等的</span></span><br><span class="line">ls1[3] = 6        <span class="comment">#此时，对ls1中索引位3的值进行修改，变为6</span></span><br></pre></td></tr></table></figure>
+<p>观察其结果，我们可以发现ls1 =&gt; [1,2,3,6,5],但是ls2 =&gt;[1,2,3,4,5]没有发生改变<br>一旦，ls1的列表元素结构发生变化，出现子列表嵌套。<br>如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls1 = [1,2,3,[<span class="string">'one'</span>,<span class="string">'two'</span>],5]，</span><br></pre></td></tr></table></figure></p>
+<p>这是再使用copy()对ls2赋值，我们进行如下修改：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls1 = [1,2,3,[<span class="string">'one'</span>,<span class="string">'two'</span>],5]</span><br><span class="line">ls2 = ls1.copy()</span><br><span class="line">ls1[3][0] = <span class="string">'three'</span></span><br></pre></td></tr></table></figure></p>
+<p>我们观察其结果，可以发现ls1 =&gt; [1,2,3,[‘three’,’two’],5],同时ls2也会随之变化 ls2 =&gt; [1,2,3,[‘three’,’two’],5]。<br>总结：这种现象我们成为浅拷贝，copy()函数进行组合数据类型拷贝时，只能控制第一层元素进行值传递，一旦出现嵌套的子列表、子字典等内容，将不再拷贝其内容的值，而是直接将这个嵌套的内存地址，赋值给ls2。所以会造成一旦原列表改变子列表内容后，目标列表中对应的子列表也发生改变。</p>
+<h3 id="2、深拷贝：我们需要引入copy这个模块，调用deepcopy-函数。写法如下："><a href="#2、深拷贝：我们需要引入copy这个模块，调用deepcopy-函数。写法如下：" class="headerlink" title="2、深拷贝：我们需要引入copy这个模块，调用deepcopy()函数。写法如下："></a>2、深拷贝：我们需要引入copy这个模块，调用deepcopy()函数。写法如下：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import copy</span><br><span class="line"></span><br><span class="line">ls1 = [1,2,3,[<span class="string">'one'</span>,<span class="string">'two'</span>],5]</span><br><span class="line">ls2 = copy.deepcopy(ls1)</span><br><span class="line">ls1[3][0] = <span class="string">'three'</span></span><br></pre></td></tr></table></figure>
+<p>此时，我们发现ls1内容发生改变后，但是ls2并没有随之改变，那么也就是意味着deepcopy()将ls1中内容，包括嵌套里面的元素都进行了副本赋值，给ls2。因此，他们只是值相同，并没有指向同一个内存地址。</p>
+<h2 id="sort-与sorted"><a href="#sort-与sorted" class="headerlink" title="sort()与sorted()"></a>sort()与sorted()</h2><p>1、sort()函数提供排序功能，同时该排序是实现了永久性排序，即会改变原有列表的元素位置。<br>2、sorted()函数提供排序功能，但是该排序进行了临时性排序，即只是产生一个有序结果，并不会真正改变原列表中元素的位置。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/26/lesson09/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-lesson08" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/26/lesson08/">组合数据类型</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/26/lesson08/" class="archive-article-date">
+  	<time datetime="2018-07-26T00:56:23.398Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="集合数据类型"><a href="#集合数据类型" class="headerlink" title="集合数据类型"></a>集合数据类型</h1><h2 id="1）元素的增加-add"><a href="#1）元素的增加-add" class="headerlink" title="1）元素的增加 add()"></a>1）元素的增加 add()</h2><p>函数格式：set.add(元素)<br>返回值：无返回值<br>结果：集合元素增加一个<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set1=&gt;&#123;1, 2, 3&#125;</span><br><span class="line">set1.add(4)</span><br><span class="line"></span><br><span class="line">&#123;1, 2, 3, 4&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="2）元素的删除"><a href="#2）元素的删除" class="headerlink" title="2）元素的删除"></a>2）元素的删除</h2><h3 id="第一、remove"><a href="#第一、remove" class="headerlink" title="第一、remove()"></a>第一、remove()</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">函数格式：set.remove(元素)</span><br><span class="line">返回值：无返回值</span><br><span class="line">结果：集合指定的元素被删除</span><br><span class="line"><span class="built_in">set</span>  =&gt; &#123;1, 2, 3, 4, 5&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">set1.remove(5)</span><br><span class="line">&#123;1, 2, 3, 4&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第二、discard"><a href="#第二、discard" class="headerlink" title="第二、discard()"></a>第二、discard()</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">函数格式：set.discard(元素)</span><br><span class="line">返回值：无返回值</span><br><span class="line">结果：集合中指定的元素被删除</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span>  =&gt; &#123;1, 2, 3, 4, 5&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">set1.discard(5)</span><br><span class="line">&#123;1, 2, 3, 4&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：上面两个方法，如果删除一个不存在的元素，其中remove()会报错，而discar()无反应</p>
+<h3 id="第三、clear-清空集合中所有的元素"><a href="#第三、clear-清空集合中所有的元素" class="headerlink" title="第三、clear() 清空集合中所有的元素"></a>第三、clear() 清空集合中所有的元素</h3><p>函数格式：set.clear()<br>返回值：无返回值<br>结果：清空集合中所有的元素<br>set.clear()<br>第四、del命令 删除集合，并释放其所占内存资源<br>del set</p>
+<h2 id="集合运算"><a href="#集合运算" class="headerlink" title="集合运算"></a>集合运算</h2><h3 id="1）并集运算-或union"><a href="#1）并集运算-或union" class="headerlink" title="1）并集运算 (|)或union()"></a>1）并集运算 (|)或union()</h3><p>两个集合进行并集运算，即将两个集合中的元素都合并到一个新的集合中，重复的元素只出现一次。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">set1 =&gt; &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set2 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set1 | set2 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'tw'</span>, <span class="string">'fr'</span>, <span class="string">'zh'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">或者</span><br><span class="line">set1.union(set2)</span><br></pre></td></tr></table></figure></p>
+<h3 id="2）交集运算-（-amp-）或intersection"><a href="#2）交集运算-（-amp-）或intersection" class="headerlink" title="2）交集运算 （&amp;）或intersection()"></a>2）交集运算 （&amp;）或intersection()</h3><p>两个集合进行交集运算，即将两个集合中相同的元素合并到一个新的集合中。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">set1 =&gt; &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set2 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set1 &amp; set2 =&gt; &#123;<span class="string">'en'</span>&#125;</span><br><span class="line">或者</span><br><span class="line">set1.intersection(set2)</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-差集运算（-）或difference"><a href="#3-差集运算（-）或difference" class="headerlink" title="3)差集运算（-）或difference()"></a>3)差集运算（-）或difference()</h3><p>两个集合进行差集运算，即运算符左边的集合，与运算右边的集合进行差运算，相当于使用左边集合去除与右边集合相同的元素。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">set1 =&gt; &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set2 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set1 - set2 =&gt; &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>&#125;</span><br><span class="line">或者</span><br><span class="line">set1.difference(set2)</span><br><span class="line">set1 =&gt; &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set2 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set2 - set1 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>&#125;</span><br><span class="line">或者</span><br><span class="line">set2.difference(set1)</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-对称差运算（-）或者symmetric-difference"><a href="#4-对称差运算（-）或者symmetric-difference" class="headerlink" title="4)对称差运算（^）或者symmetric_difference()"></a>4)对称差运算（^）或者symmetric_difference()</h3><p>两个集合进行对称差运算，即两个集合中除去相同元素，其他所有元素重新归并到一个新集合中。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set1 =&gt; &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set2 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set2 ^ set1 =&gt; &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>,<span class="string">'jp'</span>, <span class="string">'fr'</span>&#125;</span><br><span class="line">set1.symmetric_difference(set2)</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-子集与超集（父集）"><a href="#5-子集与超集（父集）" class="headerlink" title="5)子集与超集（父集）"></a>5)子集与超集（父集）</h3><p>set1 =&gt; {‘zh’, ‘tw’, ‘en’}<br>subset =&gt; {‘zh’, ‘tw’}<br>我们通过观察可以看到，subset中的内容，属于set1的一部分。因此，<br>subset.issubset(set1) =&gt; True<br>表示，subset是set1集合的一个子集合<br>同理，我们也可以说，set1是subset的父集合<br>set1.issuperset(subset) =&gt; True</p>
+<h2 id="集合常用函数"><a href="#集合常用函数" class="headerlink" title="集合常用函数"></a>集合常用函数</h2><h3 id="1）update"><a href="#1）update" class="headerlink" title="1）update()"></a>1）update()</h3><p>函数格式：set1.update(set2)<br>返回值：无<br>结果：我们将set2中的元素，添加到set1中，如果有相同的元素只保留一个。同时，该操作会修改set1的元素数量。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set1 =&gt; &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set2 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set1.update(set2)</span><br><span class="line">set1 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'tw'</span>, <span class="string">'fr'</span>, <span class="string">'zh'</span>, <span class="string">'en'</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-intersection-update"><a href="#2-intersection-update" class="headerlink" title="2)intersection_update()"></a>2)intersection_update()</h3><p>函数格式：set1.intersection_update(set2)<br>返回值：无<br>结果：我们使用set2中的元素，添加到set1中，其中，保留两个集合中相同的元素。其中，set1、set2中其他的元素被舍弃。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set1 =&gt; &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set2 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set1.intersection_update(set2)</span><br><span class="line">set1 =&gt; &#123;<span class="string">'en'</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="3）symmetric-difference-update"><a href="#3）symmetric-difference-update" class="headerlink" title="3）symmetric_difference_update()"></a>3）symmetric_difference_update()</h3><p>函数格式：symmetric_difference_update()<br>返回值：无<br>结果：我们使用set1与set2进行运算，只保留两者除去相同元素之外的元素。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set1 =&gt; &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set2 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set1.symmetric_difference_update(set2)</span><br><span class="line">set1 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'zh'</span>, <span class="string">'tw'</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="补充：高级特性"><a href="#补充：高级特性" class="headerlink" title="补充：高级特性"></a>补充：高级特性</h2><h3 id="1、range"><a href="#1、range" class="headerlink" title="1、range()"></a>1、range()</h3><p>range()函数自身并不会自动产生整数序列，它需要使用其他方式来调用它才会产生。</p>
+<h3 id="2、列表推导式生成式"><a href="#2、列表推导式生成式" class="headerlink" title="2、列表推导式生成式"></a>2、列表推导式生成式</h3><p>格式：[表达式或函数  for x in 序列]<br>含义：通过生成式中的循环，逐一产生x值，表达式使用X值进行相关运算。最终结果作为列表的元素。也就意味着，循环多少次，就会产生多少个相关元素。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/26/lesson08/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-lesson07" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -463,80 +691,6 @@
 
 
   
-    <article id="post-lesson03" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/13/lesson03/">Python编程</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/13/lesson03/" class="archive-article-date">
-  	<time datetime="2018-07-13T00:50:26.624Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h1><h2 id="1）常见的数据类型："><a href="#1）常见的数据类型：" class="headerlink" title="1）常见的数据类型："></a>1）常见的数据类型：</h2><p>整型<br>浮点型<br>布尔型<br>复数型<br>字符串型</p>
-<h2 id="2）整型"><a href="#2）整型" class="headerlink" title="2）整型"></a>2）整型</h2><p>我们通常根据计算机中数据编码格式，将整型分为：二进制、八进制、十进制、十六进制四种类型。<br>进制间的转换<br>将十进制转为二进制 ：bin(int)<br>将十进制转为八进制：oct(int)<br>将十进制转为十六进制： hex(int)<br>int()=&gt;将二进制(八进制、十六进制)转为十进制</p>
-<h2 id="3）运算符"><a href="#3）运算符" class="headerlink" title="3）运算符"></a>3）运算符</h2><p>第一，算术运算符：+、-、*、/<br>在python中默认的数据类型时浮点型，因此在执行算术运算时5/2=2.5，而不是2.<br>%：两数进行求余运算，如果分子大于分母，得余数；如果分子小于分母，直接得分子。注意：只有分子除尽分母时，结果才返回0<br>//：两数相除取整数，注意，此处得到的整数，为结果的整数部分不进行四舍五入操作。<br><strong>：A</strong>B 数A连续相乘B次，也可以说数A 的B次幂</p>
-<p>##补充：</p>
-<h3 id="1、对于数值运算的四舍五入操作"><a href="#1、对于数值运算的四舍五入操作" class="headerlink" title="1、对于数值运算的四舍五入操作"></a>1、对于数值运算的四舍五入操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">math包中的floor()和ceil()函数</span><br><span class="line">import math</span><br><span class="line">math.floor(3/2) =&gt;1   等同于 3//2    只舍不入</span><br><span class="line">math.ceil(3/2) =&gt;2    此处，只要有小数位就进位，不管小数部分是否大于等于5  只入不舍</span><br><span class="line">round()函数进行四舍五入操作，round(数值[,保留小数位数])</span><br><span class="line">round(1.5)=&gt;2  </span><br><span class="line">round(1.2)=&gt;1</span><br><span class="line">round(1,4,1)=&gt;1.4  意味着保留小数点后一位</span><br></pre></td></tr></table></figure>
-<h3 id="2、求幂运算"><a href="#2、求幂运算" class="headerlink" title="2、求幂运算"></a>2、求幂运算</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pow(2,3) =&gt;8 等同于2**3</span><br></pre></td></tr></table></figure>
-<h3 id="3、求绝对值"><a href="#3、求绝对值" class="headerlink" title="3、求绝对值"></a>3、求绝对值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abs(-10) =&gt; 10</span><br></pre></td></tr></table></figure>
-<h3 id="4、求两数相除的商与余数"><a href="#4、求两数相除的商与余数" class="headerlink" title="4、求两数相除的商与余数"></a>4、求两数相除的商与余数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">divmod(5,3) =&gt;(1,2)    类似5%3=&gt;2</span><br></pre></td></tr></table></figure>
-<h3 id="5、运算符"><a href="#5、运算符" class="headerlink" title="5、运算符"></a>5、运算符</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">i = 10 </span><br><span class="line">i = i + 5  等同于  i+=5</span><br><span class="line">i = i - 5  等同于  i-=5</span><br><span class="line">i = i * 5  等同于  i*=5</span><br><span class="line">i = i / 5  等同于  i/=5</span><br><span class="line">i = i//5   等同于  i//=5</span><br><span class="line">i = i ** 2 等同于  i**=2</span><br><span class="line">i = i % 3  等同于  i%=3</span><br></pre></td></tr></table></figure>
-<h2 id="4-布尔型"><a href="#4-布尔型" class="headerlink" title="4)布尔型"></a>4)布尔型</h2><p>1、python中布尔型分为True和False两种，但是在实际操作中我们也可以将其与1和0等同。<br>2、布尔型常用在逻辑运算和判断条件中，作为结果来使用。但是也可以参与算术运算，当进行算术运算时，True作为1、False作为0参与运算。<br>3、<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = True     a + 1 =&gt; 2</span><br><span class="line">b = False b + 1 =&gt;1</span><br><span class="line">a + b =&gt; 1</span><br></pre></td></tr></table></figure></p>
-<p>注意：通常我们在python，不能将布尔型参与算术运算的。布尔型一般参加比较运算或逻辑运算，其返回值还是布尔型。<br>布尔型求非： not<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">not a =&gt; False</span><br><span class="line">not b =&gt; True</span><br></pre></td></tr></table></figure></p>
-<p>##5)精确的十进制<br>在python中，我们通过阅读官方文档了解到，浮点数是一种近似值的表示，因此直接使用浮点数时常常出现精度丢失或不匹配情况发生。<br>python中提出了Decimal对象来进行解决，通过引入 import decimal生成一个decimal对象，将浮点数转换为decimal类型，可以支持完成对应的算术运算。例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from decimal import Decimal   <span class="comment"># 引入decimal包中的Deciaml对象</span></span><br><span class="line">f1 = 12.4556</span><br><span class="line">f2 = 24.3</span><br><span class="line">c = Decimal.from_float(f1)    <span class="comment"># 将浮点数转换为decimal对象</span></span><br><span class="line">a = Decimal(f1).quantize(Decimal(<span class="string">'0.00'</span>)) <span class="comment">#将浮点数转换为decimal对象，同时指定该数值的精度，保留小数点后两位，并自动完成四舍五入。</span></span><br><span class="line">b = Decimal(f2).quantize(Decimal(<span class="string">'0.00'</span>))</span><br><span class="line"><span class="built_in">print</span>((a*b).quantize(Decimal(<span class="string">'0.00'</span>)))</span><br></pre></td></tr></table></figure></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/13/lesson03/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-lesson04" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -590,6 +744,80 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/07/13/lesson04/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-lesson03" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/13/lesson03/">Python编程</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/13/lesson03/" class="archive-article-date">
+  	<time datetime="2018-07-13T00:50:26.624Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h1><h2 id="1）常见的数据类型："><a href="#1）常见的数据类型：" class="headerlink" title="1）常见的数据类型："></a>1）常见的数据类型：</h2><p>整型<br>浮点型<br>布尔型<br>复数型<br>字符串型</p>
+<h2 id="2）整型"><a href="#2）整型" class="headerlink" title="2）整型"></a>2）整型</h2><p>我们通常根据计算机中数据编码格式，将整型分为：二进制、八进制、十进制、十六进制四种类型。<br>进制间的转换<br>将十进制转为二进制 ：bin(int)<br>将十进制转为八进制：oct(int)<br>将十进制转为十六进制： hex(int)<br>int()=&gt;将二进制(八进制、十六进制)转为十进制</p>
+<h2 id="3）运算符"><a href="#3）运算符" class="headerlink" title="3）运算符"></a>3）运算符</h2><p>第一，算术运算符：+、-、*、/<br>在python中默认的数据类型时浮点型，因此在执行算术运算时5/2=2.5，而不是2.<br>%：两数进行求余运算，如果分子大于分母，得余数；如果分子小于分母，直接得分子。注意：只有分子除尽分母时，结果才返回0<br>//：两数相除取整数，注意，此处得到的整数，为结果的整数部分不进行四舍五入操作。<br><strong>：A</strong>B 数A连续相乘B次，也可以说数A 的B次幂</p>
+<p>##补充：</p>
+<h3 id="1、对于数值运算的四舍五入操作"><a href="#1、对于数值运算的四舍五入操作" class="headerlink" title="1、对于数值运算的四舍五入操作"></a>1、对于数值运算的四舍五入操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">math包中的floor()和ceil()函数</span><br><span class="line">import math</span><br><span class="line">math.floor(3/2) =&gt;1   等同于 3//2    只舍不入</span><br><span class="line">math.ceil(3/2) =&gt;2    此处，只要有小数位就进位，不管小数部分是否大于等于5  只入不舍</span><br><span class="line">round()函数进行四舍五入操作，round(数值[,保留小数位数])</span><br><span class="line">round(1.5)=&gt;2  </span><br><span class="line">round(1.2)=&gt;1</span><br><span class="line">round(1,4,1)=&gt;1.4  意味着保留小数点后一位</span><br></pre></td></tr></table></figure>
+<h3 id="2、求幂运算"><a href="#2、求幂运算" class="headerlink" title="2、求幂运算"></a>2、求幂运算</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pow(2,3) =&gt;8 等同于2**3</span><br></pre></td></tr></table></figure>
+<h3 id="3、求绝对值"><a href="#3、求绝对值" class="headerlink" title="3、求绝对值"></a>3、求绝对值</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abs(-10) =&gt; 10</span><br></pre></td></tr></table></figure>
+<h3 id="4、求两数相除的商与余数"><a href="#4、求两数相除的商与余数" class="headerlink" title="4、求两数相除的商与余数"></a>4、求两数相除的商与余数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">divmod(5,3) =&gt;(1,2)    类似5%3=&gt;2</span><br></pre></td></tr></table></figure>
+<h3 id="5、运算符"><a href="#5、运算符" class="headerlink" title="5、运算符"></a>5、运算符</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">i = 10 </span><br><span class="line">i = i + 5  等同于  i+=5</span><br><span class="line">i = i - 5  等同于  i-=5</span><br><span class="line">i = i * 5  等同于  i*=5</span><br><span class="line">i = i / 5  等同于  i/=5</span><br><span class="line">i = i//5   等同于  i//=5</span><br><span class="line">i = i ** 2 等同于  i**=2</span><br><span class="line">i = i % 3  等同于  i%=3</span><br></pre></td></tr></table></figure>
+<h2 id="4-布尔型"><a href="#4-布尔型" class="headerlink" title="4)布尔型"></a>4)布尔型</h2><p>1、python中布尔型分为True和False两种，但是在实际操作中我们也可以将其与1和0等同。<br>2、布尔型常用在逻辑运算和判断条件中，作为结果来使用。但是也可以参与算术运算，当进行算术运算时，True作为1、False作为0参与运算。<br>3、<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = True     a + 1 =&gt; 2</span><br><span class="line">b = False b + 1 =&gt;1</span><br><span class="line">a + b =&gt; 1</span><br></pre></td></tr></table></figure></p>
+<p>注意：通常我们在python，不能将布尔型参与算术运算的。布尔型一般参加比较运算或逻辑运算，其返回值还是布尔型。<br>布尔型求非： not<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">not a =&gt; False</span><br><span class="line">not b =&gt; True</span><br></pre></td></tr></table></figure></p>
+<p>##5)精确的十进制<br>在python中，我们通过阅读官方文档了解到，浮点数是一种近似值的表示，因此直接使用浮点数时常常出现精度丢失或不匹配情况发生。<br>python中提出了Decimal对象来进行解决，通过引入 import decimal生成一个decimal对象，将浮点数转换为decimal类型，可以支持完成对应的算术运算。例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from decimal import Decimal   <span class="comment"># 引入decimal包中的Deciaml对象</span></span><br><span class="line">f1 = 12.4556</span><br><span class="line">f2 = 24.3</span><br><span class="line">c = Decimal.from_float(f1)    <span class="comment"># 将浮点数转换为decimal对象</span></span><br><span class="line">a = Decimal(f1).quantize(Decimal(<span class="string">'0.00'</span>)) <span class="comment">#将浮点数转换为decimal对象，同时指定该数值的精度，保留小数点后两位，并自动完成四舍五入。</span></span><br><span class="line">b = Decimal(f2).quantize(Decimal(<span class="string">'0.00'</span>))</span><br><span class="line"><span class="built_in">print</span>((a*b).quantize(Decimal(<span class="string">'0.00'</span>)))</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/13/lesson03/">展开全文 >></a>
         </p>
       
 
@@ -688,77 +916,10 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/09/hello-world/">welocome to pythonshan</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/09/hello-world/" class="archive-article-date">
-  	<time datetime="2018-07-09T12:20:09.893Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/09/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 

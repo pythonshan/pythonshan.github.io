@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Python编程 | 落幕的技术博客</title>
+  <title>组合数据类型 | 落幕的技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基础编程基础语法在开发过程，对应不同的语言使用不同的字符编码。123英文    ISO-8859-1中文    gbk或gb2312目前Python为了统一编码格式，在3.0以上的版本使用了utf-8编码 print()函数语法格式：print(value,…,sep=’ ‘,end=’\n’)其中，value代表我们要输出的内容，字符串或者是数值等内容sep代表输出多个值之间的间隔符，默认空格隔">
+  <meta name="description" content="集合数据类型1）元素的增加 add()函数格式：set.add(元素)返回值：无返回值结果：集合元素增加一个例如：1234set1=&amp;gt;&amp;#123;1, 2, 3&amp;#125;set1.add(4)&amp;#123;1, 2, 3, 4&amp;#125; 2）元素的删除第一、remove()12345678函数格式：set.remove(元素)返回值：无返回值结果：集合指定的元素被删除set  =&amp;gt;">
 <meta name="keywords" content="Python、爬虫、Web开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python编程">
-<meta property="og:url" content="http://yoursite.com/2018/07/13/lesson01/index.html">
+<meta property="og:title" content="组合数据类型">
+<meta property="og:url" content="http://yoursite.com/2018/07/26/lesson08/index.html">
 <meta property="og:site_name" content="落幕的技术博客">
-<meta property="og:description" content="基础编程基础语法在开发过程，对应不同的语言使用不同的字符编码。123英文    ISO-8859-1中文    gbk或gb2312目前Python为了统一编码格式，在3.0以上的版本使用了utf-8编码 print()函数语法格式：print(value,…,sep=’ ‘,end=’\n’)其中，value代表我们要输出的内容，字符串或者是数值等内容sep代表输出多个值之间的间隔符，默认空格隔">
+<meta property="og:description" content="集合数据类型1）元素的增加 add()函数格式：set.add(元素)返回值：无返回值结果：集合元素增加一个例如：1234set1=&amp;gt;&amp;#123;1, 2, 3&amp;#125;set1.add(4)&amp;#123;1, 2, 3, 4&amp;#125; 2）元素的删除第一、remove()12345678函数格式：set.remove(元素)返回值：无返回值结果：集合指定的元素被删除set  =&amp;gt;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-16T03:02:08.628Z">
+<meta property="og:updated_time" content="2018-08-02T01:00:42.642Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python编程">
-<meta name="twitter:description" content="基础编程基础语法在开发过程，对应不同的语言使用不同的字符编码。123英文    ISO-8859-1中文    gbk或gb2312目前Python为了统一编码格式，在3.0以上的版本使用了utf-8编码 print()函数语法格式：print(value,…,sep=’ ‘,end=’\n’)其中，value代表我们要输出的内容，字符串或者是数值等内容sep代表输出多个值之间的间隔符，默认空格隔">
+<meta name="twitter:title" content="组合数据类型">
+<meta name="twitter:description" content="集合数据类型1）元素的增加 add()函数格式：set.add(元素)返回值：无返回值结果：集合元素增加一个例如：1234set1=&amp;gt;&amp;#123;1, 2, 3&amp;#125;set1.add(4)&amp;#123;1, 2, 3, 4&amp;#125; 2）元素的删除第一、remove()12345678函数格式：set.remove(元素)返回值：无返回值结果：集合指定的元素被删除set  =&amp;gt;">
   
     <link rel="alternative" href="/atom.xml" title="落幕的技术博客" type="application/atom+xml">
   
@@ -160,33 +160,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-lesson01" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-lesson08" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Python编程
+      组合数据类型
     </h1>
   
 
         
-        <a href="/2018/07/13/lesson01/" class="archive-article-date">
-  	<time datetime="2018-07-13T00:50:26.614Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-13</time>
+        <a href="/2018/07/26/lesson08/" class="archive-article-date">
+  	<time datetime="2018-07-26T00:56:23.398Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="基础编程"><a href="#基础编程" class="headerlink" title="基础编程"></a>基础编程</h1><h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><p>在开发过程，对应不同的语言使用不同的字符编码。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">英文    ISO-8859-1</span><br><span class="line">中文    gbk或gb2312</span><br><span class="line">目前Python为了统一编码格式，在3.0以上的版本使用了utf-8编码</span><br></pre></td></tr></table></figure></p>
-<h2 id="print-函数"><a href="#print-函数" class="headerlink" title="print()函数"></a>print()函数</h2><p>语法格式：print(value,…,sep=’ ‘,end=’\n’)<br>其中，value代表我们要输出的内容，字符串或者是数值等内容<br>sep代表输出多个值之间的间隔符，默认空格隔开。在引号内可以用其他内容重新定义间隔符。<br>end代表输出语句的结束标识，默认换行，可以用其他内容重新定义，其输出的内容将不再进行换行操作。</p>
-<h2 id="print-函数的基本使用"><a href="#print-函数的基本使用" class="headerlink" title="print()函数的基本使用"></a>print()函数的基本使用</h2><h3 id="print-常用输出方式："><a href="#print-常用输出方式：" class="headerlink" title="print()常用输出方式："></a>print()常用输出方式：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'hello '</span>)、<span class="built_in">print</span>(123456)等</span><br></pre></td></tr></table></figure>
-<h3 id="参数格式输出"><a href="#参数格式输出" class="headerlink" title="参数格式输出"></a>参数格式输出</h3><p>%s：代表了字符串内容，其中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'welcome %s'</span>%Beijing)=&gt;welcome Beijing</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'welcome %10.3s'</span>%Beijing)=&gt;welcome       Bei,输出结果为10个字符其中包含字符串Beijing中前三个，其余用空格填充</span><br></pre></td></tr></table></figure></p>
-<p>%d：代表了整数内容，其中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'price %d'</span>%10)=&gt;price 10</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'price %d'</span>%10.5) =&gt; price 10</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'price %3d'</span>%10000)=&gt; price 10000</span><br><span class="line">注意这里面的3d表示输出一个宽度为3个单元的数值，如果数值长度小于三，那么数值靠右对齐。</span><br><span class="line">-3d表示，数值反向对齐（靠左对齐）</span><br></pre></td></tr></table></figure></p>
-<p>%f：代表了浮点数内容(注意，在Python中浮点数是一个近似值，所以结果也是近似)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'price %f'</span>%10.2)=&gt;10.200000</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'price %.1f'</span>%10.2) =&gt; 10.2</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'prince %.1f'</span>%10.58) = &gt;10.6 当取一位小数位的时候，将小数位第二位进行舍入操作，但是Python的中间值不是5，导致当小数位第二位是5时，直接被舍去</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'%5.1f'</span>%10.3) =&gt; 10.3</span><br><span class="line">输出一个宽度为5的单位，其中整数3位，小数部分1位，小数点占一位</span><br></pre></td></tr></table></figure></p>
-<h2 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h2><p>在Python3.0之后，推荐使用{0}来代替前期的%d,%s,%f等一系列的格式化参数，采用了字符串的format函数进行处理。写法如下：<br>print(‘welcome {0}同学，加入{1}班级’.format(‘tom’,’Python3班’))<br>其中{0}，{1}分别映射format()中的’tom’和’Python3班’，如果前面占位符中的索引值变化，那么他们映射的值也随之变化</p>
+        <h1 id="集合数据类型"><a href="#集合数据类型" class="headerlink" title="集合数据类型"></a>集合数据类型</h1><h2 id="1）元素的增加-add"><a href="#1）元素的增加-add" class="headerlink" title="1）元素的增加 add()"></a>1）元素的增加 add()</h2><p>函数格式：set.add(元素)<br>返回值：无返回值<br>结果：集合元素增加一个<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set1=&gt;&#123;1, 2, 3&#125;</span><br><span class="line">set1.add(4)</span><br><span class="line"></span><br><span class="line">&#123;1, 2, 3, 4&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="2）元素的删除"><a href="#2）元素的删除" class="headerlink" title="2）元素的删除"></a>2）元素的删除</h2><h3 id="第一、remove"><a href="#第一、remove" class="headerlink" title="第一、remove()"></a>第一、remove()</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">函数格式：set.remove(元素)</span><br><span class="line">返回值：无返回值</span><br><span class="line">结果：集合指定的元素被删除</span><br><span class="line"><span class="built_in">set</span>  =&gt; &#123;1, 2, 3, 4, 5&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">set1.remove(5)</span><br><span class="line">&#123;1, 2, 3, 4&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="第二、discard"><a href="#第二、discard" class="headerlink" title="第二、discard()"></a>第二、discard()</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">函数格式：set.discard(元素)</span><br><span class="line">返回值：无返回值</span><br><span class="line">结果：集合中指定的元素被删除</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span>  =&gt; &#123;1, 2, 3, 4, 5&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">set1.discard(5)</span><br><span class="line">&#123;1, 2, 3, 4&#125;</span><br></pre></td></tr></table></figure>
+<p>注意：上面两个方法，如果删除一个不存在的元素，其中remove()会报错，而discar()无反应</p>
+<h3 id="第三、clear-清空集合中所有的元素"><a href="#第三、clear-清空集合中所有的元素" class="headerlink" title="第三、clear() 清空集合中所有的元素"></a>第三、clear() 清空集合中所有的元素</h3><p>函数格式：set.clear()<br>返回值：无返回值<br>结果：清空集合中所有的元素<br>set.clear()<br>第四、del命令 删除集合，并释放其所占内存资源<br>del set</p>
+<h2 id="集合运算"><a href="#集合运算" class="headerlink" title="集合运算"></a>集合运算</h2><h3 id="1）并集运算-或union"><a href="#1）并集运算-或union" class="headerlink" title="1）并集运算 (|)或union()"></a>1）并集运算 (|)或union()</h3><p>两个集合进行并集运算，即将两个集合中的元素都合并到一个新的集合中，重复的元素只出现一次。<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">set1 =&gt; &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set2 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set1 | set2 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'tw'</span>, <span class="string">'fr'</span>, <span class="string">'zh'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">或者</span><br><span class="line">set1.union(set2)</span><br></pre></td></tr></table></figure></p>
+<h3 id="2）交集运算-（-amp-）或intersection"><a href="#2）交集运算-（-amp-）或intersection" class="headerlink" title="2）交集运算 （&amp;）或intersection()"></a>2）交集运算 （&amp;）或intersection()</h3><p>两个集合进行交集运算，即将两个集合中相同的元素合并到一个新的集合中。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">set1 =&gt; &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set2 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set1 &amp; set2 =&gt; &#123;<span class="string">'en'</span>&#125;</span><br><span class="line">或者</span><br><span class="line">set1.intersection(set2)</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-差集运算（-）或difference"><a href="#3-差集运算（-）或difference" class="headerlink" title="3)差集运算（-）或difference()"></a>3)差集运算（-）或difference()</h3><p>两个集合进行差集运算，即运算符左边的集合，与运算右边的集合进行差运算，相当于使用左边集合去除与右边集合相同的元素。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">set1 =&gt; &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set2 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set1 - set2 =&gt; &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>&#125;</span><br><span class="line">或者</span><br><span class="line">set1.difference(set2)</span><br><span class="line">set1 =&gt; &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set2 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set2 - set1 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>&#125;</span><br><span class="line">或者</span><br><span class="line">set2.difference(set1)</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-对称差运算（-）或者symmetric-difference"><a href="#4-对称差运算（-）或者symmetric-difference" class="headerlink" title="4)对称差运算（^）或者symmetric_difference()"></a>4)对称差运算（^）或者symmetric_difference()</h3><p>两个集合进行对称差运算，即两个集合中除去相同元素，其他所有元素重新归并到一个新集合中。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set1 =&gt; &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set2 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set2 ^ set1 =&gt; &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>,<span class="string">'jp'</span>, <span class="string">'fr'</span>&#125;</span><br><span class="line">set1.symmetric_difference(set2)</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-子集与超集（父集）"><a href="#5-子集与超集（父集）" class="headerlink" title="5)子集与超集（父集）"></a>5)子集与超集（父集）</h3><p>set1 =&gt; {‘zh’, ‘tw’, ‘en’}<br>subset =&gt; {‘zh’, ‘tw’}<br>我们通过观察可以看到，subset中的内容，属于set1的一部分。因此，<br>subset.issubset(set1) =&gt; True<br>表示，subset是set1集合的一个子集合<br>同理，我们也可以说，set1是subset的父集合<br>set1.issuperset(subset) =&gt; True</p>
+<h2 id="集合常用函数"><a href="#集合常用函数" class="headerlink" title="集合常用函数"></a>集合常用函数</h2><h3 id="1）update"><a href="#1）update" class="headerlink" title="1）update()"></a>1）update()</h3><p>函数格式：set1.update(set2)<br>返回值：无<br>结果：我们将set2中的元素，添加到set1中，如果有相同的元素只保留一个。同时，该操作会修改set1的元素数量。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set1 =&gt; &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set2 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set1.update(set2)</span><br><span class="line">set1 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'tw'</span>, <span class="string">'fr'</span>, <span class="string">'zh'</span>, <span class="string">'en'</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-intersection-update"><a href="#2-intersection-update" class="headerlink" title="2)intersection_update()"></a>2)intersection_update()</h3><p>函数格式：set1.intersection_update(set2)<br>返回值：无<br>结果：我们使用set2中的元素，添加到set1中，其中，保留两个集合中相同的元素。其中，set1、set2中其他的元素被舍弃。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set1 =&gt; &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set2 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set1.intersection_update(set2)</span><br><span class="line">set1 =&gt; &#123;<span class="string">'en'</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="3）symmetric-difference-update"><a href="#3）symmetric-difference-update" class="headerlink" title="3）symmetric_difference_update()"></a>3）symmetric_difference_update()</h3><p>函数格式：symmetric_difference_update()<br>返回值：无<br>结果：我们使用set1与set2进行运算，只保留两者除去相同元素之外的元素。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set1 =&gt; &#123;<span class="string">'zh'</span>, <span class="string">'tw'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set2 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'en'</span>&#125;</span><br><span class="line">set1.symmetric_difference_update(set2)</span><br><span class="line">set1 =&gt; &#123;<span class="string">'jp'</span>, <span class="string">'fr'</span>, <span class="string">'zh'</span>, <span class="string">'tw'</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="补充：高级特性"><a href="#补充：高级特性" class="headerlink" title="补充：高级特性"></a>补充：高级特性</h2><h3 id="1、range"><a href="#1、range" class="headerlink" title="1、range()"></a>1、range()</h3><p>range()函数自身并不会自动产生整数序列，它需要使用其他方式来调用它才会产生。</p>
+<h3 id="2、列表推导式生成式"><a href="#2、列表推导式生成式" class="headerlink" title="2、列表推导式生成式"></a>2、列表推导式生成式</h3><p>格式：[表达式或函数  for x in 序列]<br>含义：通过生成式中的循环，逐一产生x值，表达式使用X值进行相关运算。最终结果作为列表的元素。也就意味着，循环多少次，就会产生多少个相关元素。</p>
 
       
 
@@ -266,7 +274,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/13/lesson01/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/26/lesson08/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -280,18 +288,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/07/13/lesson03/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/26/lesson09/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Python编程
+          组合数据类型
         
       </div>
     </a>
   
   
-    <a href="/2018/07/09/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">welocome to pythonshan</div>
+    <a href="/2018/07/18/lesson07/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">组合数据类型</div>
       <i class="icon-circle-right"></i>
     </a>
   

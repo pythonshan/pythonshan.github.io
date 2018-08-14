@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Python编程 | 落幕的技术博客</title>
+  <title>组合数据类型 | 落幕的技术博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基础编程基础语法在开发过程，对应不同的语言使用不同的字符编码。123英文    ISO-8859-1中文    gbk或gb2312目前Python为了统一编码格式，在3.0以上的版本使用了utf-8编码 print()函数语法格式：print(value,…,sep=’ ‘,end=’\n’)其中，value代表我们要输出的内容，字符串或者是数值等内容sep代表输出多个值之间的间隔符，默认空格隔">
+  <meta name="description" content="迭代器（Iterator）1）概念：迭代器访问元素，是从第一个元素开始，依次访问后续元素直到结束。其中迭代器只能向前不能回退。其包含两个方法iter()和next()。iter()用来创建一个迭代器，next()用来访问下一个元素。目前我们所学的字符串、列表、元组都可以创建迭代器，那么他们也是可迭代化的对象。迭代器两个步骤： 1、当调用next()函数，会将迭代器当前位置状态进行改变2、会将下一个">
 <meta name="keywords" content="Python、爬虫、Web开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python编程">
-<meta property="og:url" content="http://yoursite.com/2018/07/13/lesson01/index.html">
+<meta property="og:title" content="组合数据类型">
+<meta property="og:url" content="http://yoursite.com/2018/07/26/lesson09/index.html">
 <meta property="og:site_name" content="落幕的技术博客">
-<meta property="og:description" content="基础编程基础语法在开发过程，对应不同的语言使用不同的字符编码。123英文    ISO-8859-1中文    gbk或gb2312目前Python为了统一编码格式，在3.0以上的版本使用了utf-8编码 print()函数语法格式：print(value,…,sep=’ ‘,end=’\n’)其中，value代表我们要输出的内容，字符串或者是数值等内容sep代表输出多个值之间的间隔符，默认空格隔">
+<meta property="og:description" content="迭代器（Iterator）1）概念：迭代器访问元素，是从第一个元素开始，依次访问后续元素直到结束。其中迭代器只能向前不能回退。其包含两个方法iter()和next()。iter()用来创建一个迭代器，next()用来访问下一个元素。目前我们所学的字符串、列表、元组都可以创建迭代器，那么他们也是可迭代化的对象。迭代器两个步骤： 1、当调用next()函数，会将迭代器当前位置状态进行改变2、会将下一个">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-07-16T03:02:08.628Z">
+<meta property="og:updated_time" content="2018-08-02T00:58:52.624Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python编程">
-<meta name="twitter:description" content="基础编程基础语法在开发过程，对应不同的语言使用不同的字符编码。123英文    ISO-8859-1中文    gbk或gb2312目前Python为了统一编码格式，在3.0以上的版本使用了utf-8编码 print()函数语法格式：print(value,…,sep=’ ‘,end=’\n’)其中，value代表我们要输出的内容，字符串或者是数值等内容sep代表输出多个值之间的间隔符，默认空格隔">
+<meta name="twitter:title" content="组合数据类型">
+<meta name="twitter:description" content="迭代器（Iterator）1）概念：迭代器访问元素，是从第一个元素开始，依次访问后续元素直到结束。其中迭代器只能向前不能回退。其包含两个方法iter()和next()。iter()用来创建一个迭代器，next()用来访问下一个元素。目前我们所学的字符串、列表、元组都可以创建迭代器，那么他们也是可迭代化的对象。迭代器两个步骤： 1、当调用next()函数，会将迭代器当前位置状态进行改变2、会将下一个">
   
     <link rel="alternative" href="/atom.xml" title="落幕的技术博客" type="application/atom+xml">
   
@@ -160,33 +160,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-lesson01" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-lesson09" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Python编程
+      组合数据类型
     </h1>
   
 
         
-        <a href="/2018/07/13/lesson01/" class="archive-article-date">
-  	<time datetime="2018-07-13T00:50:26.614Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-13</time>
+        <a href="/2018/07/26/lesson09/" class="archive-article-date">
+  	<time datetime="2018-07-26T01:00:43.826Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="基础编程"><a href="#基础编程" class="headerlink" title="基础编程"></a>基础编程</h1><h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><p>在开发过程，对应不同的语言使用不同的字符编码。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">英文    ISO-8859-1</span><br><span class="line">中文    gbk或gb2312</span><br><span class="line">目前Python为了统一编码格式，在3.0以上的版本使用了utf-8编码</span><br></pre></td></tr></table></figure></p>
-<h2 id="print-函数"><a href="#print-函数" class="headerlink" title="print()函数"></a>print()函数</h2><p>语法格式：print(value,…,sep=’ ‘,end=’\n’)<br>其中，value代表我们要输出的内容，字符串或者是数值等内容<br>sep代表输出多个值之间的间隔符，默认空格隔开。在引号内可以用其他内容重新定义间隔符。<br>end代表输出语句的结束标识，默认换行，可以用其他内容重新定义，其输出的内容将不再进行换行操作。</p>
-<h2 id="print-函数的基本使用"><a href="#print-函数的基本使用" class="headerlink" title="print()函数的基本使用"></a>print()函数的基本使用</h2><h3 id="print-常用输出方式："><a href="#print-常用输出方式：" class="headerlink" title="print()常用输出方式："></a>print()常用输出方式：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'hello '</span>)、<span class="built_in">print</span>(123456)等</span><br></pre></td></tr></table></figure>
-<h3 id="参数格式输出"><a href="#参数格式输出" class="headerlink" title="参数格式输出"></a>参数格式输出</h3><p>%s：代表了字符串内容，其中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'welcome %s'</span>%Beijing)=&gt;welcome Beijing</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'welcome %10.3s'</span>%Beijing)=&gt;welcome       Bei,输出结果为10个字符其中包含字符串Beijing中前三个，其余用空格填充</span><br></pre></td></tr></table></figure></p>
-<p>%d：代表了整数内容，其中<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'price %d'</span>%10)=&gt;price 10</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'price %d'</span>%10.5) =&gt; price 10</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'price %3d'</span>%10000)=&gt; price 10000</span><br><span class="line">注意这里面的3d表示输出一个宽度为3个单元的数值，如果数值长度小于三，那么数值靠右对齐。</span><br><span class="line">-3d表示，数值反向对齐（靠左对齐）</span><br></pre></td></tr></table></figure></p>
-<p>%f：代表了浮点数内容(注意，在Python中浮点数是一个近似值，所以结果也是近似)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">'price %f'</span>%10.2)=&gt;10.200000</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'price %.1f'</span>%10.2) =&gt; 10.2</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'prince %.1f'</span>%10.58) = &gt;10.6 当取一位小数位的时候，将小数位第二位进行舍入操作，但是Python的中间值不是5，导致当小数位第二位是5时，直接被舍去</span><br><span class="line"><span class="built_in">print</span>(<span class="string">'%5.1f'</span>%10.3) =&gt; 10.3</span><br><span class="line">输出一个宽度为5的单位，其中整数3位，小数部分1位，小数点占一位</span><br></pre></td></tr></table></figure></p>
-<h2 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h2><p>在Python3.0之后，推荐使用{0}来代替前期的%d,%s,%f等一系列的格式化参数，采用了字符串的format函数进行处理。写法如下：<br>print(‘welcome {0}同学，加入{1}班级’.format(‘tom’,’Python3班’))<br>其中{0}，{1}分别映射format()中的’tom’和’Python3班’，如果前面占位符中的索引值变化，那么他们映射的值也随之变化</p>
+        <h1 id="迭代器（Iterator）"><a href="#迭代器（Iterator）" class="headerlink" title="迭代器（Iterator）"></a>迭代器（Iterator）</h1><h2 id="1）概念：迭代器访问元素，是从第一个元素开始，依次访问后续元素直到结束。其中迭代器只能向前不能回退。其包含两个方法iter-和next-。"><a href="#1）概念：迭代器访问元素，是从第一个元素开始，依次访问后续元素直到结束。其中迭代器只能向前不能回退。其包含两个方法iter-和next-。" class="headerlink" title="1）概念：迭代器访问元素，是从第一个元素开始，依次访问后续元素直到结束。其中迭代器只能向前不能回退。其包含两个方法iter()和next()。"></a>1）概念：迭代器访问元素，是从第一个元素开始，依次访问后续元素直到结束。其中迭代器只能向前不能回退。其包含两个方法iter()和next()。</h2><p>iter()用来创建一个迭代器，next()用来访问下一个元素。<br>目前我们所学的字符串、列表、元组都可以创建迭代器，那么他们也是可迭代化的对象。<br>迭代器两个步骤：</p>
+<h3 id="1、当调用next-函数，会将迭代器当前位置状态进行改变"><a href="#1、当调用next-函数，会将迭代器当前位置状态进行改变" class="headerlink" title="1、当调用next()函数，会将迭代器当前位置状态进行改变"></a>1、当调用next()函数，会将迭代器当前位置状态进行改变</h3><h3 id="2、会将下一个元素进行返回"><a href="#2、会将下一个元素进行返回" class="headerlink" title="2、会将下一个元素进行返回"></a>2、会将下一个元素进行返回</h3><p>迭代器的延迟作用：迭代器生成的元素并不是在迭代器声明时，就准备好了的。通常时在调用迭代器需要提供该元素时生成的，也就是说只有在我们需要的时候迭代器才产生相关元素，不需要时并不会主动的生成相关元素。我们可以把迭代器看成一个容器，到我们需要时使用next()方法返回容器中的下一个值。<br>迭代器实现了工厂模式的对象，它在你每次访问下一个值的时候给你返回。</p>
+<p>可迭代化（iterable）：表明相关的对象可以创建迭代器对象，同时他们自身都是可以进行for数据遍历的。我们可以使用isinstance()来判断对象是否为可迭代化</p>
+<p>from collections import Iterable<br>string = ‘hello’<br>print(isinstance(string, Iterable))  =&gt; True<br>函数格式：isinstance(对象，类型)<br>返回值：布尔值<br>结果：如果指定的对象属于指定的类型，那么返回True，反之返回False</p>
+<p>enumerate()函数<br>函数格式：enumerate(iterable)<br>返回值：生成一个枚举对象<br>例如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">enum = enumberate([<span class="string">'one'</span>,<span class="string">'two'</span>,<span class="string">'three'</span>])</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> enum:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line">    </span><br><span class="line">(0, <span class="string">'one'</span>)</span><br><span class="line">(1, <span class="string">'two'</span>)</span><br><span class="line">(2, <span class="string">'three'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,value <span class="keyword">in</span> enum:</span><br><span class="line">    <span class="built_in">print</span>(i, value)</span><br><span class="line">   </span><br><span class="line">0 one</span><br><span class="line">1 two</span><br><span class="line">2 three</span><br></pre></td></tr></table></figure></p>
+<h1 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h1><h2 id="1、创建方式"><a href="#1、创建方式" class="headerlink" title="1、创建方式"></a>1、创建方式</h2><p>第一种，使用列表推导式，将[]改为()，生成一个generator对象<br>第二种，使用函数方式，采用yield关键字来实现</p>
+<h2 id="2、使用"><a href="#2、使用" class="headerlink" title="2、使用"></a>2、使用</h2><p>生成器我们通常可以认为一种特殊的迭代器，但是它不需要像迭代器一样去实现<strong>iter</strong>,<strong>next</strong>方法。只需要使用yield关键字，该关键字可以在每次调用生成器函数时起到暂停作用，并将其值进行返回。同时还会记录当前运行值的状态。</p>
+<h2 id="总结：迭代器和生成器"><a href="#总结：迭代器和生成器" class="headerlink" title="总结：迭代器和生成器"></a>总结：迭代器和生成器</h2><p>1、容器是一系列的元素集合，str、list、set、dict对象都可以看作是容器，容器都可以进行迭代（即用在while或for循环），凡是这样的容器我们都称为可迭代化对象（Iterable）。<br>2、可迭代化对象都实现了<strong>iter</strong>方法，该方法返回一个迭代器对象。<br>3、迭代器都拥有一个状态字段，用于记录下次迭代返回值。它实现了<strong>next</strong>和<strong>iter</strong>方法，迭代器不会一次性把所有的元素都加载到内存中，而是在需要的时候才生成返回结果。<br>4、生成器是一种特殊的迭代器，它的返回值不是通过return来返回的，而是通过yield来返回的。</p>
+<h2 id="copy-浅拷贝-和deepcopy-（深拷贝）"><a href="#copy-浅拷贝-和deepcopy-（深拷贝）" class="headerlink" title="copy()(浅拷贝)和deepcopy()（深拷贝）"></a>copy()(浅拷贝)和deepcopy()（深拷贝）</h2><h3 id="1、浅拷贝：我们使用copy-函数将列表中的元素，进行复制，通常对于普通的列表（一维）能够实现完全的值传递，即将自身的副本赋值给另外一个列表。例如："><a href="#1、浅拷贝：我们使用copy-函数将列表中的元素，进行复制，通常对于普通的列表（一维）能够实现完全的值传递，即将自身的副本赋值给另外一个列表。例如：" class="headerlink" title="1、浅拷贝：我们使用copy()函数将列表中的元素，进行复制，通常对于普通的列表（一维）能够实现完全的值传递，即将自身的副本赋值给另外一个列表。例如："></a>1、浅拷贝：我们使用copy()函数将列表中的元素，进行复制，通常对于普通的列表（一维）能够实现完全的值传递，即将自身的副本赋值给另外一个列表。例如：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls1 = [1,2,3,4,5]</span><br><span class="line">ls2 = ls1.copy()  <span class="comment"># 将ls1中的元素赋值给ls2,此时他们的值相等的</span></span><br><span class="line">ls1[3] = 6        <span class="comment">#此时，对ls1中索引位3的值进行修改，变为6</span></span><br></pre></td></tr></table></figure>
+<p>观察其结果，我们可以发现ls1 =&gt; [1,2,3,6,5],但是ls2 =&gt;[1,2,3,4,5]没有发生改变<br>一旦，ls1的列表元素结构发生变化，出现子列表嵌套。<br>如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls1 = [1,2,3,[<span class="string">'one'</span>,<span class="string">'two'</span>],5]，</span><br></pre></td></tr></table></figure></p>
+<p>这是再使用copy()对ls2赋值，我们进行如下修改：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls1 = [1,2,3,[<span class="string">'one'</span>,<span class="string">'two'</span>],5]</span><br><span class="line">ls2 = ls1.copy()</span><br><span class="line">ls1[3][0] = <span class="string">'three'</span></span><br></pre></td></tr></table></figure></p>
+<p>我们观察其结果，可以发现ls1 =&gt; [1,2,3,[‘three’,’two’],5],同时ls2也会随之变化 ls2 =&gt; [1,2,3,[‘three’,’two’],5]。<br>总结：这种现象我们成为浅拷贝，copy()函数进行组合数据类型拷贝时，只能控制第一层元素进行值传递，一旦出现嵌套的子列表、子字典等内容，将不再拷贝其内容的值，而是直接将这个嵌套的内存地址，赋值给ls2。所以会造成一旦原列表改变子列表内容后，目标列表中对应的子列表也发生改变。</p>
+<h3 id="2、深拷贝：我们需要引入copy这个模块，调用deepcopy-函数。写法如下："><a href="#2、深拷贝：我们需要引入copy这个模块，调用deepcopy-函数。写法如下：" class="headerlink" title="2、深拷贝：我们需要引入copy这个模块，调用deepcopy()函数。写法如下："></a>2、深拷贝：我们需要引入copy这个模块，调用deepcopy()函数。写法如下：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import copy</span><br><span class="line"></span><br><span class="line">ls1 = [1,2,3,[<span class="string">'one'</span>,<span class="string">'two'</span>],5]</span><br><span class="line">ls2 = copy.deepcopy(ls1)</span><br><span class="line">ls1[3][0] = <span class="string">'three'</span></span><br></pre></td></tr></table></figure>
+<p>此时，我们发现ls1内容发生改变后，但是ls2并没有随之改变，那么也就是意味着deepcopy()将ls1中内容，包括嵌套里面的元素都进行了副本赋值，给ls2。因此，他们只是值相同，并没有指向同一个内存地址。</p>
+<h2 id="sort-与sorted"><a href="#sort-与sorted" class="headerlink" title="sort()与sorted()"></a>sort()与sorted()</h2><p>1、sort()函数提供排序功能，同时该排序是实现了永久性排序，即会改变原有列表的元素位置。<br>2、sorted()函数提供排序功能，但是该排序进行了临时性排序，即只是产生一个有序结果，并不会真正改变原列表中元素的位置。</p>
 
       
 
@@ -266,7 +274,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/13/lesson01/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/26/lesson09/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -280,18 +288,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/07/13/lesson03/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/08/02/lesson10/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Python编程
+          组合数据类型
         
       </div>
     </a>
   
   
-    <a href="/2018/07/09/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">welocome to pythonshan</div>
+    <a href="/2018/07/26/lesson08/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">组合数据类型</div>
       <i class="icon-circle-right"></i>
     </a>
   
